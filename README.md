@@ -1,11 +1,8 @@
 # Replicating the spider bias
 
-## The project
-
 >*Despite widespread claims to the contrary, the human mind is not worse than rational . . . but may often be better than rational.* (Cosmides and Tooby, 1994)
 
 ***
-
 
 Tenants of evolutionary psychology have argued that **cognitive biases are not flaws, but often well-adapted features of organisms** who have faced the same problems in their environment throughout their evolutionary history. For instance, it may be advantageous to overdetect predators, whereas it is very costly to underdetect them. This is predicted by **Error Management Theory** (EMT; Haselton & Buss, 2000), which is an application of the Signal Detection Theory to cognitive mechanisms that include noise or incertitude and for which the costs of the type of error (i.e. false alarm or missed detection) are not equal.
 
@@ -19,13 +16,38 @@ I intend to replicate their experiment, with some minor changes:
 
 - I won't implement their second factor, which was the size of the paddle used by the participants to block the incoming object (the threat to block and the size of the paddle acted independently from each other);
 - in their experiment, they used a downwrd-facing projector to display the stimuli on a table; as I can't afford to use one, I will try to replicate the effect using a standard computer screen and Expyriment;
-- in their experiment, they used a picture of a real spider; it may be interesting to **add some schematic representations of spiders to see if the bias is still there** (if it is, it may strenghtens the view that we possess some kind of "spider template", as found in infants by Rakison & Derringer, 2007);
-- it may be interesting to **see if this effect is modulated by fear of spiders** (we may have chosen also age, psycho-social ressources, health, genre, and so forth).
+- in their experiment, they used a picture of a real spider; it may be interesting to **add some schematic representations of spiders to see if the bias is still there** (if it is, it may strenghtens the view that we possess some kind of "spider template", as found in infants by Rakison & Derringer, 2007), and to use other types of insect (which inspire disgust or not; which may harm us or not)
+- it may be interesting to **see if this effect is modulated by fear of spiders**
 
 To sum it up, in the present experiment, **participants will have to rate the speed of different objects coming towards them**. We expect **a main effect of Object type: the speed of the spider (real or schematic) will be inflated compared to other objects**.  We also expect **an interaction between Fear of spiders and Object type (the stronger the fear, the stronger the bias)**.
 
-## Implementing the Fear of Spiders Qestionnaire
+## How to run the project
+
+1) Clone the repository on your computer using a terminal
+2) Launch the program from your terminal: it takes two argument.
+
+*E.g.if you want to compare the evaluation of the speed of a spider and of the speed of a fly, type: python Spider_bias.py tegenaria_domestica.png musca_domestica.png*
+
+3) The data are stored in a *.xpd* file in the folder Data.
+
+## Implementing the Fear of Spiders Questionnaire
 
 The *Fear of Spiders Questionnaire* (FSQ; Szymanksi & O’Donohue, 1995) contains 18 items, for which participants have to answer on a seven-point Likert scale. It has proven to be sensitive to non-phobic fears of spider (Muris & Merckelbach, 1996), which is the reason why I have decided to use it in my experiment. As I obviously don't want the participants to think the experiment is about spider fear, they will have to complete the questionnaire only after the speed evaluation process.
 
 My goal is, for each question, to present the question (translated in french), and beneath it a seven-point scale, on which participants would have to click.There should also be a "Submit" button to go to the next question.
+
+## What I learned from this course
+
+### My previous coding experience
+
+Before the course, I had followed a one-semester introductory course on Python. I thus knew the basics of the language (how to use a loop, how to build a function, and so forth), but I had never worked on a precise library before (such as Expyriment) nor had I written a full-scale functioning program.
+
+### What I learned from this course
+
+I feel like the course gave us a fantastic **toolbox** to use in our future projects: Pygame, Expyriment, Github, github.io, Pandas, the PCBS ressources and Automatetheboringstuff. Furthermore, we also learned about **good scientific practices**: the clarity of the code, the availability of the data and of the material used in the experiment (thanks to Github, for instance).
+
+### What I still got to learn
+
+I still have a lot to learn. For instance, I didn't used Expyriment in the most efficient way (I basically recoded the TouchScreenButtonBox as I didn't manage to use it whith a Canva object, and I didn't use the *move* function to move the stimuli). Also, my code could have shorter and clearer.
+
+In the future, I would like to start using *R* for making statistics and get familiarized with Matlab. I also intend to deepen my knowledge in Python (finishing Automatetheboringstuff would be a good start).
