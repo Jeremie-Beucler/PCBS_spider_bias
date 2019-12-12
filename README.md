@@ -26,7 +26,7 @@ To sum it up, in the present experiment, **participants will have to rate the sp
 1) Clone the repository on your computer using a terminal
 2) Launch the program from your terminal: it takes two argument.
 
-*E.g.if you want to compare the evaluation of the speed of a spider and of the speed of a fly, type: python Spider_bias.py tegenaria_domestica.png musca_domestica.png*
+*E.g. if you want to compare the evaluation of the speed of a spider and of the speed of a fly, type:* "python Spider_bias.py tegenaria_domestica.png musca_domestica.png"
 
 3) The data are stored in a *.xpd* file in the folder Data.
 
@@ -44,10 +44,10 @@ Before the course, I had followed a one-semester introductory course on Python. 
 
 ### What I learned from this course
 
-I feel like the course gave us a fantastic **toolbox** to use in our future projects: Pygame, Expyriment, Github, github.io, Pandas, the PCBS ressources and Automatetheboringstuff. Furthermore, we also learned about **good scientific practices**: the clarity of the code, the availability of the data and of the material used in the experiment (thanks to Github, for instance).
+I feel like the course gave us a fantastic **toolbox** to use in our future projects: Pygame, Expyriment, Github, github.io, Pandas, the PCBS ressources and Automatetheboringstuff... Furthermore, we also learned about **good scientific practices**: the clarity of the code, the availability of the data and of the material used in the experiment (thanks to Github, for instance).
 
 ### What I still got to learn
 
-I still have a lot to learn. For instance, I didn't used Expyriment in the most efficient way (I basically recoded the TouchScreenButtonBox as I didn't manage to use it whith a Canva object, and I didn't use the *move* function to move the stimuli). Also, my code could have shorter and clearer.
+I still have a lot to learn. For instance, I didn't used Expyriment in the most efficient way (I basically recoded the TouchScreenButtonBox as I didn't manage to use it whith a Canva object, and I didn't use the *"move"* function to move the stimuli). Also, my code could have shorter and clearer.
 
 In the future, I would like to start using *R* for making statistics and get familiarized with Matlab. I also intend to deepen my knowledge in Python (finishing Automatetheboringstuff would be a good start).
