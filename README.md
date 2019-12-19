@@ -36,7 +36,17 @@ All the pictures were found on Google image and were free of rights. The logicie
 
 ### Creating the background
 
-As I could not use a downward-facing projector, I had to give the impression to the participant that he or she was looking down at the floor. In order to do that, I decided to create for each trial a [Canvas](https://docs.expyriment.org/expyriment.stimuli.Canvas.html) with a floor and the picture of neutral legs in blue jeans. 
+As I could not use a downward-facing projector, I had to give the impression to the participant that he or she was looking down at the floor. In order to do that, I decided to create for each trial a [Canvas](https://docs.expyriment.org/expyriment.stimuli.Canvas.html) with a floor and the picture of neutral legs in blue jeans.
+
+The code was very simple, I just had to create the Canvas and to plot the pictures on it.
+
+```
+toile_pieds = expyriment.stimuli.Canvas(size=(1000,800), colour=(255,255,255))
+sol = expyriment.stimuli.Picture('plancher.png')
+sol.plot(toile_pieds)
+feet_pic = expyriment.stimuli.Picture('feet.png', position=(0, -245))
+feet_pic.plot(toile_pieds)
+```
 
 ![Background](background.png)
 
