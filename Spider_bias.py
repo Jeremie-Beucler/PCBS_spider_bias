@@ -148,8 +148,7 @@ consignes_test.present()
 exp.keyboard.wait()
 
 for object in range(1, len(sys.argv)):
-	#speeds = [10, 20, 30, 40, 50, 60, 70] * 2
-	speeds = [50, 60]
+	speeds = [10, 20, 30, 40, 50, 60, 70] * 2
 	random.shuffle(speeds)
 	#pour chaque objet, les participants voient toutes les vitesses deux fois dans un ordre aléatoire
 			
