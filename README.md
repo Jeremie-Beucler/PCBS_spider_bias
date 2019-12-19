@@ -50,7 +50,9 @@ I decided to use different sorts of insects (e.g. dangerous or harmless ones, di
 
 *The picture of a spider used in the experiment ("Tegenaria domestica", the kind that hides in our basements in Europe)*
 
+## Making the objects move
 
+I needed, for each trial, to make the object move as if it were alive.
 
 ## Implementing the Fear of Spiders Questionnaire
 
