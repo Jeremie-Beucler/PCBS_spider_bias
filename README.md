@@ -68,7 +68,9 @@ def calc_pos(ancient_pos, verti_move, limit_verti):
 	Returns: the new position of the stimulus (tuple) and the degree of the rotation to apply to the stimulus (int)"""
   ```
   
-At first, I tried to use the *"Move"* function of Expyriment, but I did not succeed to implement it on a Canvas so I decided to implement it directly in the function.
+At first, I tried to use the *"Move"* function of Expyriment, but I did not succeed to implement it on a Canvas so I decided to implement it directly in the function. 
+
+The vertical move corresponds to the speed of the object, one of the variable of interest in the experiment. Thanks to the *random* function, I managed to give a random horizontal move to the stimuli (-5, 0 or 5), in order to make it look like it was moving on its own.
 
 ```
 new_pos = [ancient_pos[0],(ancient_pos[1] + -1 * verti_move)]
@@ -76,14 +78,14 @@ new_pos = [ancient_pos[0],(ancient_pos[1] + -1 * verti_move)]
 	random_hori_move = random.randrange(-5,6,5)
 ```
 
-The vertical move corresponds to the speed of the object, one of the variable of interest in the experiment. Thanks to the *random* function, I managed to give a random horizontal move to the stimuli (-5, 0 or 5), in order to make it look like it was moving on its own.
+The stimulus also had to rotate in the horizontal direction it was going to.
 
 ```
 degree_rotation = random_hori_move
 new_pos[0] += random_hori_move
 ```
 
-The stimulus also had to rotate in the horizontal direction it was going to.
+The last block of code was used only if the stimulus was approaching the feet in the background picture; when it crosses the threshold, the stimulus chooses the side of the screen in which it was to move diagonally.
 
 ```
 if new_pos[0] >= 0:
@@ -98,7 +100,9 @@ else:
 			degree_rotation = -7 - (verti_move//5)
 ```
 
-The last block of code was used only if the stimulus was approaching the feet in the background picture; when it crosses the threshold, the stimulus chooses the side of the screen in which it was to move diagonally.
+And the function simply returns the new position of the object and the rotation to apply to it.
+
+```return new_pos, degree_rotation```
 
 
 
