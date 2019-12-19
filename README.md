@@ -191,12 +191,17 @@ The function returns the list of Canvas to display, the positions of the buttons
 return(list_can, list_pos, radius_button, pos_submit_button)
 ```
 
+## The training part
++ instructions, stimulus (circle)
 
+## The test part
++ the speeds; the loops (for each object, then for each speed); checking whether the participant has clicked or not in one of the buttons of the scale
 
+## The questionnaire part
 
-## Implementing the Fear of Spiders Questionnaire
+The *Fear of Spiders Questionnaire* (FSQ; Szymanksi & O’Donohue, 1995) contains 18 items, for which participants have to answer on a seven-point Likert scale. It has proven to be sensitive to non-phobic fears of spider (Muris & Merckelbach, 1996), which is the reason why I have decided to use it in my experiment.
 
-The *Fear of Spiders Questionnaire* (FSQ; Szymanksi & O’Donohue, 1995) contains 18 items, for which participants have to answer on a seven-point Likert scale. It has proven to be sensitive to non-phobic fears of spider (Muris & Merckelbach, 1996), which is the reason why I have decided to use it in my experiment. As I obviously don't want the participants to think the experiment is about spider fear, they will have to complete the questionnaire only after the speed evaluation process.
++ read the .txt file to get the questions; same thing for checking if has clicked or not
 
 ## What I learned from this course
 
