@@ -21,6 +21,14 @@ I intend to replicate their experiment, with some minor changes:
 
 To sum it up, in the present experiment, **participants will have to rate the speed of different objects coming towards them**. We expect **a main effect of Object type: the speed of the spider (real or schematic) will be inflated compared to other objects**.  We also expect **an interaction between Fear of spiders and Object type (the stronger the fear, the stronger the bias)**.
 
+## The design of the experiment
+
+The experiment consists in three parts:
+
+- the training part, where the participant familiarizes with the two extreme speeds (the lowest and the highest) by looking at the movements of a simple circle
+- the test part, where the participant has to juge, in each trial, the speed of one of the two objects; there are 28 trials (7 speeds x 2 x 2 object types)
+- the Fear of Spiders Questionnaire (18 items)
+
 ## How to run the project
 
 1) Clone the repository on your computer using a terminal
@@ -182,6 +190,9 @@ The function returns the list of Canvas to display, the positions of the buttons
 ```
 return(list_can, list_pos, radius_button, pos_submit_button)
 ```
+
+
+
 
 ## Implementing the Fear of Spiders Questionnaire
 
