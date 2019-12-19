@@ -15,7 +15,7 @@ In a 2013 article, Witt & Sugovic found that **we tend to inflate the speed of a
 I intend to replicate their experiment, with some minor changes:
 
 - I won't implement their second factor, which was the size of the paddle used by the participants to block the incoming object (the threat to block and the size of the paddle acted independently from each other);
-- in their experiment, they used a downwrd-facing projector to display the stimuli on a table; as I can't afford to use one, I will try to replicate the effect using a standard computer screen and Expyriment;
+- in their experiment, they used a downward-facing projector to display the stimuli on a table; as I can't afford to use one, I will try to replicate the effect using a standard computer screen and Expyriment;
 - in their experiment, they used a picture of a real spider; it may be interesting to **add some schematic representations of spiders to see if the bias is still there** (if it is, it may strenghtens the view that we possess some kind of "spider template", as found in infants by Rakison & Derringer, 2007), and to use other types of insect (which inspire disgust or not; which may harm us or not)
 - it may be interesting to **see if this effect is modulated by fear of spiders**
 
@@ -30,11 +30,27 @@ To sum it up, in the present experiment, **participants will have to rate the sp
 
 3) The data are stored in a *.xpd* file in the folder Data.
 
+## Creating the stimuli
+
+All the pictures were found on Google image and were free of rights. The logiciel [Gimp](https://www.gimp.org/fr/) was used to trim each picture from its background.
+
+### Creating the background
+
+As I could not use a downward-facing projector, I had to give the impression to the participant that he or she was looking down at the floor. In order to do that, I decided to create for each trial a [Canvas](https://docs.expyriment.org/expyriment.stimuli.Canvas.html) with a floor and the picture of neutral legs in blue jeans. 
+
+### Finding the objects to animate
+
+I decided to use different sorts of insects (e.g. dangerous or harmless ones, disgusting or not). The schematic spider drawings were found in the Material of Rakinson & Derringer (2007).
+
+![](tegenaria_domestica.png)
+
+*The picture of a spider used in the experiment ("Tegenaria domestica", the kind that hides in our basements in Europe)*
+
+
+
 ## Implementing the Fear of Spiders Questionnaire
 
 The *Fear of Spiders Questionnaire* (FSQ; Szymanksi & O’Donohue, 1995) contains 18 items, for which participants have to answer on a seven-point Likert scale. It has proven to be sensitive to non-phobic fears of spider (Muris & Merckelbach, 1996), which is the reason why I have decided to use it in my experiment. As I obviously don't want the participants to think the experiment is about spider fear, they will have to complete the questionnaire only after the speed evaluation process.
-
-My goal is, for each question, to present the question (translated in french), and beneath it a seven-point scale, on which participants would have to click.There should also be a "Submit" button to go to the next question.
 
 ## What I learned from this course
 
