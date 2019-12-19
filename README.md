@@ -52,7 +52,55 @@ I decided to use different sorts of insects (e.g. dangerous or harmless ones, di
 
 ## Making the objects move
 
-I needed, for each trial, to make the object move as if it were alive.
+I needed, for each trial, to make the object move as if it were alive. I thus designed a function with its documentation.
+
+```
+def calc_pos(ancient_pos, verti_move, limit_verti):
+	"""Defines the new position of a stimulus, whith a random horizontal movement and a fixed vertical one. 
+	   When the stimulus crosses a fixed point on the y axis, the object makes a diagonal depending on which side
+	   of the screen it was on the x axis.
+	
+	Args
+	- ancient_pos(tuple): the previous position of the stimulus on the x and y axis
+	- verti_move (int): the nb of pixel for the verti movement (i.e. the speed of the stimulus)
+	- limit_verti (int): limit on the y axis for the stimulus to choose a side (left or right)
+	
+	Returns: the new position of the stimulus (tuple) and the degree of the rotation to apply to the stimulus (int)"""
+  ```
+  
+At first, I tried to use the *"Move"* function of Expyriment, but I did not succeed to implement it on a Canvas so I decided to implement it directly in the function.
+
+```
+new_pos = [ancient_pos[0],(ancient_pos[1] + -1 * verti_move)]
+	# translation du stimulus sur l'axe des y
+	random_hori_move = random.randrange(-5,6,5)
+```
+
+The vertical move corresponds to the speed of the object, one of the variable of interest in the experiment. Thanks to the *random* function, I managed to give a random horizontal move to the stimuli (-5, 0 or 5), in order to make it look like it was moving on its own.
+
+```
+degree_rotation = random_hori_move
+new_pos[0] += random_hori_move
+```
+
+The stimulus also had to rotate in the horizontal direction it was going to.
+
+```
+if new_pos[0] >= 0:
+		# si le stimulus était dans la partie droite de l'écran
+			new_pos[0] += 5 * (verti_move//5)
+			#le stimulus part à droite
+			degree_rotation = 7 + (verti_move//5)
+else:
+		# si le stimulus était dans la partie gauche de l'écran
+			new_pos[0] += -1 * (5 * (verti_move//5))
+			#le stimulus part à gauche
+			degree_rotation = -7 - (verti_move//5)
+```
+
+The last block of code was used only if the stimulus was approaching the feet in the background picture; when it crosses the threshold, the stimulus chooses the side of the screen in which it was to move diagonally.
+
+
 
 ## Implementing the Fear of Spiders Questionnaire
 
