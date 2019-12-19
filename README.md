@@ -104,6 +104,39 @@ And the function simply returns the new position of the object and the rotation 
 
 ```return new_pos, degree_rotation```
 
+## Creating a Likert scale
+
+I needed my participants to answer on this kind of scale when:
+- they judged the speed of the object in each trial
+- they answered the Fear of Spiders Questionnaire at the end of the experiment
+
+Therefore, writing a function with adjustable parameters was very useful. 
+
+```
+def Likert_scale(N, legendes, questions):
+	"""Draws a Likert scale with buttons and text for legend and questions
+	
+	Args:
+		- N (int): nombre de points sur l'échelle (doit être impair: 5, 7, etc.)
+		- legendes (list of strings): légendes à rajouter pour chaque case (ex: un peu d'accord, d'accord...)
+		=> N et legendes permettent de créer l'échelle
+		- questions (list of strings): liste de questions à poser au participant 
+		=> questions permet de créer le questionnaire
+	Returns: chaque question rentrée avec l'échelle correspondante (list of canvas), les positions des boutons de réponses 		(list of tuples), le rayon des boutons de réponse (int), la position du bouton submit (tuple)
+	"""
+```
+Firstly, I had to place the response buttons on the x-axis. I just had to compute
+
+```
+extremite_echelle = int((N - 1)/2)
+	#e.g. si l'échelle est à 7 points, on obtient 3 (l'échelle va de -3 à 3)
+	distance_cercles = 700/N
+	#on divise une partie de la toile (qui fait 800*600 pixels, voir + bas) par le nombre de points de l'échelle
+	list_pos = []
+	for i in range(-extremite_echelle, extremite_echelle + 1):
+			list_pos.append(int(i * distance_cercles))
+			#on calcule, sur l'axe horizontal, les positions des boutons de réponse
+```
 
 
 ## Implementing the Fear of Spiders Questionnaire
