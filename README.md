@@ -112,6 +112,8 @@ I needed my participants to answer on this kind of scale when:
 
 Therefore, writing a function with adjustable parameters was very useful. 
 
+However, as I was working with Canvas objects, I did not manage to use the [TouchScreenButtonBox](https://docs.expyriment.org/expyriment.io.TouchScreenButtonBox.html) of Expyriment.
+
 ```
 def Likert_scale(N, legendes, questions):
 	"""Draws a Likert scale with buttons and text for legend and questions
@@ -125,7 +127,7 @@ def Likert_scale(N, legendes, questions):
 	Returns: chaque question rentrée avec l'échelle correspondante (list of canvas), les positions des boutons de réponses 		(list of tuples), le rayon des boutons de réponse (int), la position du bouton submit (tuple)
 	"""
 ```
-Firstly, I had to place the response buttons on the x-axis. I just had to compute
+Firstly, I had to place the response buttons on the x-axis. I just had to compute the extreme points of the scale and to multiply them by the relative distance between the circles. I then added each position in a list.
 
 ```
 extremite_echelle = int((N - 1)/2)
@@ -137,7 +139,39 @@ extremite_echelle = int((N - 1)/2)
 			list_pos.append(int(i * distance_cercles))
 			#on calcule, sur l'axe horizontal, les positions des boutons de réponse
 ```
+I then created the buttons stimuli and the legends stimuli.
 
+```
+for i in range(N):
+			button = expyriment.stimuli.Circle(radius=radius_button, position=(list_pos[i],-50), colour=(0,0,0), line_width=2)
+			list_button.append(button)
+			text_leg = expyriment.stimuli.TextBox(legendes[i], position=(list_pos[i],0), size=(100, 50))
+			list_text_leg.append(text_leg)
+			#création des boutons de réponse avec leurs légendes
+```
+
+In the last block of code, I create a Canvas object for each question. I then plot on it the buttons, the legends, the question and a submit button. Finally, I just have to add each Canvas to a list returned by the function.
+
+```
+for i in range(len(questions)):
+		toile = expyriment.stimuli.Canvas(size=(800,600), colour=(255,255,255))
+		for elt in list_button:
+			elt.plot(toile)
+		for elt in list_text_leg:
+			elt.plot(toile)
+		text_question = expyriment.stimuli.TextBox(questions[i], position=(0,100), size=(700, 50), text_colour=(0,0,0))
+		text_question.plot(toile)
+		ok = expyriment.stimuli.Picture('ok.png', position=(pos_submit_button))
+		ok.plot(toile)
+		list_can.append(toile)
+		#ajout pour chaque question d'une toile, et sur chaque toile de l'échelle, de la question, et d'un bouton pour valider ('ok.png')
+```
+
+The function returns the list of Canvas to display, the positions of the buttons, their radius and the position of the submit button. It will be quite useful as I will need to check whether the participant clicked on the button to determine his or her answer.
+
+```
+return(list_can, list_pos, radius_button, pos_submit_button)
+```
 
 ## Implementing the Fear of Spiders Questionnaire
 
