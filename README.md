@@ -38,6 +38,10 @@ All the pictures were found on Google image and were free of rights. The logicie
 
 As I could not use a downward-facing projector, I had to give the impression to the participant that he or she was looking down at the floor. In order to do that, I decided to create for each trial a [Canvas](https://docs.expyriment.org/expyriment.stimuli.Canvas.html) with a floor and the picture of neutral legs in blue jeans. 
 
+![Background](background.png)
+
+*The background on which the objects moved during the experiment*
+
 ### Finding the objects to animate
 
 I decided to use different sorts of insects (e.g. dangerous or harmless ones, disgusting or not). The schematic spider drawings were found in the Material of Rakinson & Derringer (2007).
