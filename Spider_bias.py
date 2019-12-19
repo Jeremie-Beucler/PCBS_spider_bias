@@ -38,14 +38,14 @@ def calc_pos(ancient_pos, verti_move, limit_verti):
 		new_pos[0] += random_hori_move
 	else: 
 		if new_pos[0] >= 0:
-		# si le stimulus était dans la partie gauche de l'écran
+		# si le stimulus était dans la partie droite de l'écran
 			new_pos[0] += 5 * (verti_move//5)
-			#le stimulus part à gauche
+			#le stimulus part à droite
 			degree_rotation = 7 + (verti_move//5)
 		else:
-		# si le stimulus était dans la partie droite de l'écran
+		# si le stimulus était dans la partie gauche de l'écran
 			new_pos[0] += -1 * (5 * (verti_move//5))
-			#le stimulus part à droite
+			#le stimulus part à gauche
 			degree_rotation = -7 - (verti_move//5)
 		
 	return new_pos, degree_rotation
