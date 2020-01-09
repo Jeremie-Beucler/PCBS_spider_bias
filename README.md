@@ -26,13 +26,13 @@ To sum it up, in the present experiment, **participants will have to rate the sp
 The experiment consists in three parts:
 
 - the training part, where the participant familiarizes with the two extreme speeds (the lowest and the highest) by looking at the movements of a simple circle
-- the test part, where the participant has to juge, in each trial, the speed of one of the two objects; there are 28 trials (7 speeds x 2 x 2 object types)
+- the test part, where the participant has to juge, in each trial, the speed of one of the two objects; there are 28 trials (7 speeds seen twice x 2 object types)
 - the Fear of Spiders Questionnaire (18 items)
 
 ## How to run the project
 
 1) Clone the repository on your computer using a terminal
-2) Launch the program from your terminal: it takes two argument.
+2) Launch the program from your terminal: it takes two argument (the objects you want to compare)
 
 *E.g. if you want to compare the evaluation of the speed of a spider and of the speed of a fly, type:* "python Spider_bias.py tegenaria_domestica.png musca_domestica.png"
 
@@ -70,7 +70,7 @@ I decided to use different sorts of insects (e.g. dangerous or harmless ones, di
 
 ## Making the objects move
 
-I needed, for each trial, to make the object move as if it were alive. I thus designed a function with its documentation.
+I needed, for each trial, to make the object move as if it were alive. I thus designed a function to calculate the positions of the object.
 
 ```
 def calc_pos(ancient_pos, verti_move, limit_verti):
@@ -96,7 +96,7 @@ new_pos = [ancient_pos[0],(ancient_pos[1] + -1 * verti_move)]
 	random_hori_move = random.randrange(-5,6,5)
 ```
 
-The stimulus also had to rotate in the horizontal direction it was going to.
+The stimulus also had to rotate in the horizontal direction it was going to, for the movement to be more realistic
 
 ```
 degree_rotation = random_hori_move
@@ -192,7 +192,36 @@ return(list_can, list_pos, radius_button, pos_submit_button)
 ```
 
 ## The training part
-+ instructions, stimulus (circle)
+
+Après présentation des consignes, les sujets voient deux fois les deux vitesses extrêmes (la plus lente et la plus rapide).
+
+```
+speeds_training = [10, 70]
+# les sujets ne voient pendant l'entraînement que les deux vitesses extrêmes
+for i in range(0, 2):
+	for speed in speeds_training:
+		speed_to_display = "Vitesse " + str(speed//10)
+		text_speed = expyriment.stimuli.TextScreen(speed_to_display, "\nObservez attentivement le cercle se déplacer à la "+ speed_to_display + "\n\n(Appuyez sur une touche pour continuer)")
+		text_speed.present()
+		exp.keyboard.wait()
+```
+
+Pour que l'
+		pos_circle = [0,400]
+		while pos_circle[1] >= -350:
+			pos_circle, deg_rot = calc_pos(pos_circle,speed,-75)
+			toile_pieds = expyriment.stimuli.Canvas(size=(1000,800), colour=(255,255,255))
+			sol = expyriment.stimuli.Picture('plancher.png')
+			sol.plot(toile_pieds)
+			feet_pic = expyriment.stimuli.Picture('feet.png', position=(0, -245))
+			feet_pic.plot(toile_pieds)
+			dot = expyriment.stimuli.Circle(radius=25, colour=(255, 0, 0), position=pos_circle)
+			dot.plot(toile_pieds)
+			toile_pieds.present()
+			exp.clock.wait(1)
+			#fait bouger le cercle pour chacune des deux vitesses, deux fois
+```
+
 
 ## The test part
 + the speeds; the loops (for each object, then for each speed); checking whether the participant has clicked or not in one of the buttons of the scale
