@@ -226,6 +226,89 @@ Pour que l'entraînement soit le plus neutre possible, il s'effectue avec un cer
 
 
 ## The test part
+
+Pour chaque objet, les participants sont confrontés aux 7 vitesses deux fois, dans un ordre aléatoire.
+
+```
+for object in range(1, len(sys.argv)):
+	speeds = [10, 20, 30, 40, 50, 60, 70] * 2
+	random.shuffle(speeds)
+```
+
+Ensuite, le code est le même que pour l'entraînement: la position de l'objet est calculée en fonction de sa vitesse toutes les millisecondes, jusqu'à ce qu'il disparaisse de l'écran (-350 sur l'axe vertical).
+
+```
+while pos_pic[1] >= -350
+```
+
+Ensuite, le questionnaire s'affiche pour que le participant évalue la vitesse de l'objet sur une échelle de 1 à 7. Le code est un peu long, dans la mesure où il faut:
+
+- savoir où est-ce que le participant a cliqué
+
+```
+		toile = questionnaire[0]
+		toile.present()
+		expyriment.io.Mouse(show_cursor=True)
+		has_clicked_button = 0
+		has_clicked_submit = 0
+		while has_clicked_submit == 0:
+			pos = exp.mouse.wait_press()
+			pos_tuple = pos[1]
+			#enregistre la position cliquée par le participant
+```
+
+- puis cocher le bouton où le participant a cliqué
+
+```
+			if has_clicked_button == 0:
+			#si le participant clique pour la première fois dans un des boutons
+				for elt in position_cercles:
+					if pos_tuple[0] < elt + rad_button and pos_tuple[0] > elt - rad_button:
+						if pos_tuple[1] < -50 + rad_button and pos_tuple[1] > -50 - rad_button:
+						#si le participant a cliqué sur un des boutons
+							circle_first_rep = expyriment.stimuli.Circle(radius=5, position=(elt, -50), colour=(0, 0, 255))
+							circle_first_rep.plot(toile)
+							#remplit le bouton cliqué d'un cercle bleu
+							ancient_pos_clicked = (elt, -50)
+							has_clicked_button += 1
+							toile.present()
+```
+					
+- prévoir un changement éventuel de réponse (en décochant l'ancien bouton et en recochant le nouveau
+
+```
+			elif has_clicked_button != 0:
+			#si le participant a déjà répondu une fois
+				for elt in position_cercles:
+					if pos_tuple[0] < elt + rad_button and pos_tuple[0] > elt - rad_button:
+						if pos_tuple[1] < -50 + rad_button and pos_tuple[1] > -50 - rad_button:
+							circle_to_del = expyriment.stimuli.Circle(radius=rad_button, position=(ancient_pos_clicked), colour=(255,255,255), line_width=0)
+							circle_to_del.plot(toile)
+							ancient_circle = expyriment.stimuli.Circle(radius=rad_button, position=(ancient_pos_clicked), colour=(0,0,0), line_width=2)
+							ancient_circle.plot(toile)
+							#restaure l'ancien bouton cliqué à son état initial
+							circle_has_rep = expyriment.stimuli.Circle(radius=5, position=(elt, -50), colour=(0, 0, 255))
+							circle_has_rep.plot(toile)
+							#remplit le nouveau bouton cliqué d'un cercle bleu
+							toile.present()
+							ancient_pos_clicked = (elt, -50)
+```
+
+- passer à la vitesse suivante si le participant a répondu puis a validé sa réponse
+
+
+```		
+				if pos_tuple[0] < (pos_sub[0] + rad_button) and pos_tuple[0] > (pos_sub[0] - rad_button):
+					if pos_tuple[1] < (pos_sub[1] + rad_button) and pos_tuple[1] > (pos_sub[1] - rad_button):
+						has_clicked_submit += 1
+						#si le sujet clique sur le bouton valider, on passe à la question suivant
+						score = (int(ancient_pos_clicked[0]/100 + 4))
+						#permet de passer des positions des cercles (-300, -200, etc.) aux points (de 1 à 7 ici)
+		
+		exp.data.add([sys.argv[object], (speed //10), score])
+	
+```
+
 + the speeds; the loops (for each object, then for each speed); checking whether the participant has clicked or not in one of the buttons of the scale
 
 ## The questionnaire part
@@ -248,4 +331,4 @@ I feel like the course gave us a fantastic **toolbox** to use in our future proj
 
 I still have a lot to learn. For instance, I didn't used Expyriment in the most efficient way (I basically recoded the TouchScreenButtonBox as I didn't manage to use it whith a Canva object, and I didn't use the *"move"* function to move the stimuli). Also, my code could have shorter and clearer.
 
-In the future, I would like to start using *R* for making statistics and get familiarized with Matlab. I also intend to deepen my knowledge in Python (finishing Automatetheboringstuff would be a good start).
+In the future, I would like to start using *R* for statistics and get familiarized with Matlab. I also intend to deepen my knowledge in Python - finishing Automatetheboringstuff would be a good start.
