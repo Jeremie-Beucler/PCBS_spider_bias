@@ -206,7 +206,9 @@ for i in range(0, 2):
 		exp.keyboard.wait()
 ```
 
-Pour que l'
+Pour que l'entraînement soit le plus neutre possible, il s'effectue avec un cercle rouge se déplaçant. Sa position, actualisée toute les millisecondes, est calculée grâce à la fonction *calc_pos* présentée ci-dessus.
+
+```
 		pos_circle = [0,400]
 		while pos_circle[1] >= -350:
 			pos_circle, deg_rot = calc_pos(pos_circle,speed,-75)
