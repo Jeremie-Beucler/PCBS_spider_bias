@@ -259,6 +259,8 @@ Ensuite, le questionnaire s'affiche pour que le participant évalue la vitesse d
 
 - puis cocher le bouton où le participant a cliqué
 
+Cela nécessite de savoir si le pointeur se trouvait sur un des boutons de réponse, grâce à une boucle *for* sur les positions des cercles en prenant en compte leur rayon, sur l'axe vertical et horizontal.
+
 ```
 			if has_clicked_button == 0:
 			#si le participant clique pour la première fois dans un des boutons
@@ -302,20 +304,31 @@ Ensuite, le questionnaire s'affiche pour que le participant évalue la vitesse d
 					if pos_tuple[1] < (pos_sub[1] + rad_button) and pos_tuple[1] > (pos_sub[1] - rad_button):
 						has_clicked_submit += 1
 						#si le sujet clique sur le bouton valider, on passe à la question suivant
+						
+```
+
+Puis l'on enregistre la vitesse de présentation de l'objet pour cet essai, ainsi que l'évaluation du participant, et l'on passe à l'essai suivant.
+
+```
 						score = (int(ancient_pos_clicked[0]/100 + 4))
 						#permet de passer des positions des cercles (-300, -200, etc.) aux points (de 1 à 7 ici)
-		
 		exp.data.add([sys.argv[object], (speed //10), score])
 	
 ```
-
-+ the speeds; the loops (for each object, then for each speed); checking whether the participant has clicked or not in one of the buttons of the scale
 
 ## The questionnaire part
 
 The *Fear of Spiders Questionnaire* (FSQ; Szymanksi & O’Donohue, 1995) contains 18 items, for which participants have to answer on a seven-point Likert scale. It has proven to be sensitive to non-phobic fears of spider (Muris & Merckelbach, 1996), which is the reason why I have decided to use it in my experiment.
 
 + read the .txt file to get the questions; same thing for checking if has clicked or not
+
+## Bibliographie (à faire)
+
+- article initial
+- première citation
+- article dvpt araignées schématiques
+- article EMT
+- Expyriment
 
 ## What I learned from this course
 
