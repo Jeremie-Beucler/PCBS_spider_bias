@@ -2,9 +2,22 @@
 # -*- coding: utf-8 -*-
 
 """
+What does this script:
+
 This script replicates an experiment where the participant, after an initial training part has to rate the speeds of different objects
- approaching towards him or her, on a seven-points Likert scale.
- After the experiment itself, the participant has to complete a questionnaire about his or her fear of spiders.
+approaching towards him or her, on a seven-points Likert scale.
+After the experiment itself, the participant has to complete a questionnaire about his or her fear of spiders.
+
+How to run the program:
+
+- Clone the github repository (https://github.com/Jeremie-Beucler/PCBS_spider_bias) on your computer using a terminal
+- Launch the program from your terminal: it takes two argument (the objects you want to compare)
+
+N.B.: the arguments must be names of .png pictures of the github repository.
+
+E.g. if you want to compare the evaluation of the speed of a spider and of the speed of a fly, type: "python Spider_bias.py tegenaria_domestica.png musca_domestica.png"
+
+All the data are stored in a .xpd file in the folder Data.
 """
 
 import expyriment
