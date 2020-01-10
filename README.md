@@ -38,6 +38,22 @@ The experiment consists in three parts:
 
 3) The data are stored in a *.xpd* file in the folder Data.
 
+Thanks to a simple loop seen in class, I was able to anticipate a possible mistake while entering the arguments.
+
+```
+if len(sys.argv) < 3 or len(sys.argv) > 3:
+	print("")
+	print("Usage: you need to enter two arguments - the two objects you want to compare - to run this program.")
+	print("The arguments need to be .png file of the repository")
+	print("")
+	print("Example: python Spider_bias.py tegenaria_domestica.png musca_domestica.png")
+	sys.exit()
+else:
+	list_object = []
+	list_object.append(sys.argv[1])
+	list_object.append(sys.argv[2])
+```
+
 ## Creating the stimuli
 
 All the pictures were found on Google image and were free of rights. The logiciel [Gimp](https://www.gimp.org/fr/) was used to trim each picture from its background.
@@ -243,7 +259,7 @@ For the training part to be neutral, the object was a red circle moving through 
 For each object, the participants see the 7 speeds twice, in a randomized order.
 
 ```
-for object in range(1, len(sys.argv)):
+for object in list_object:
 	speeds = [10, 20, 30, 40, 50, 60, 70] * 2
 	random.shuffle(speeds)
 ```
@@ -324,7 +340,7 @@ N.B.: it implies to know if the mouse was on one of the response buttons, thanks
 ```
 						score = (int(ancient_pos_clicked[0]/100 + 4))
 						#permet de passer des positions des cercles (-300, -200, etc.) aux points (de 1 à 7 ici)
-		exp.data.add([sys.argv[object], (speed //10), score])
+		exp.data.add([object, (speed //10), score])
 	
 ```
 
