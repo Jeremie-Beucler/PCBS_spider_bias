@@ -44,7 +44,7 @@ exp = expyriment.design.Experiment(name="Spider_bias")
 expyriment.control.initialize(exp)
 
 consignes_entraînement = expyriment.stimuli.TextScreen("Entraînement", "\nVous allez voir un cercle se déplacer à deux vitesses: vitesse 1 (la plus lente) et vitesse 7 (la plus rapide).\n(Appuyez sur une touche pour continuer)", heading_underline=True)
-consignes_test = expyriment.stimuli.TextScreen("Expérience", "\nMaintenant que vous êtes familiarisés avec les deux vitesses extrêmes, indiquez pour chaque objet, sur une échelle allant de 1 (la plus lente) à 7 (la plus rapide), à quelle vitesse il s'est déplaçé.\n Il vous faudra cliquer sur l'échelle après chaque présentation d'objet.\n\n(Appuyez sur une touche pour continuer)", heading_underline=True)
+consignes_test = expyriment.stimuli.TextScreen("Expérience", "\nMaintenant que vous êtes familiarisés avec les deux vitesses extrêmes, indiquez pour chaque objet, sur une échelle allant de 1 (la plus lente) à 7 (la plus rapide), à quelle vitesse il s'est déplaçé.\n\n Il vous faudra cliquer sur un des boutons de l'échelle, après chaque présentation.\n\n\n(Appuyez sur une touche pour continuer)", heading_underline=True)
 consignes_questionnaire = expyriment.stimuli.TextScreen("Questionnaire", "\nMerci d\'avoir participé à cette expérience. Avant de finir, veuillez compléter le questionnaire suivant. \n Choisissez une réponse sur l\'échelle de \"pas du tout d\'accord\" à \"tout à fait d\'accord\" pour chacun des 18 items.\n\n(Appuyez sur une touche pour continuer)", heading_underline=True)
 
 
