@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
+"""
+This script replicates an experiment where the participant, after an initial training part has to rate the speeds of different objects
+ approaching towards him or her, on a seven-points Likert scale.
+ After the experiment itself, the participant has to complete a questionnaire about his or her fear of spiders.
+"""
+
 import expyriment
 import random
 import sys
