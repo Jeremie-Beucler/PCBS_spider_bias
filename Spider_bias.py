@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import expyriment
+import random
+import sys
+from statistics import mean
+
 """
 What does this script:
 
@@ -20,10 +25,17 @@ E.g. if you want to compare the evaluation of the speed of a spider and of the s
 All the data are stored in a .xpd file in the folder Data.
 """
 
-import expyriment
-import random
-import sys
-from statistics import mean
+if len(sys.argv) < 3 or len(sys.argv) > 3:
+	print("")
+	print("Usage: you need to enter two arguments - the two objects you want to compare - to run this program.")
+	print("The arguments need to be .png file of the repository")
+	print("")
+	print("Example: python Spider_bias.py tegenaria_domestica.png musca_domestica.png")
+	sys.exit()
+else:
+	list_object = []
+	list_object.append(sys.argv[1])
+	list_object.append(sys.argv[2])
 
 exp = expyriment.design.Experiment(name="Spider_bias")
 
@@ -167,7 +179,7 @@ for i in range(0, 2):
 consignes_test.present()
 exp.keyboard.wait()
 
-for object in range(1, len(sys.argv)):
+for object in list_object:
 	speeds = [10, 20, 30, 40, 50, 60, 70] * 2
 	random.shuffle(speeds)
 	#pour chaque objet, les participants voient toutes les vitesses deux fois dans un ordre aléatoire
@@ -183,7 +195,7 @@ for object in range(1, len(sys.argv)):
 			sol.plot(toile_pieds)
 			feet_pic = expyriment.stimuli.Picture('feet.png', position=(0, -245))
 			feet_pic.plot(toile_pieds)
-			pic_stim = expyriment.stimuli.Picture(sys.argv[object], position=pos_pic)
+			pic_stim = expyriment.stimuli.Picture(object, position=pos_pic)
 			pic_stim.rotate(deg_rot)
 			pic_stim.plot(toile_pieds)
 			toile_pieds.present()
@@ -234,7 +246,7 @@ for object in range(1, len(sys.argv)):
 						score = (int(ancient_pos_clicked[0]/100 + 4))
 						#permet de passer des positions des cercles (-300, -200, etc.) aux points (de 1 à 7 ici)
 		
-		exp.data.add([sys.argv[object], (speed //10), score])
+		exp.data.add([object, (speed //10), score])
 	
 consignes_questionnaire.present()
 exp.keyboard.wait()
