@@ -122,6 +122,11 @@ And the function simply returns the new position of the object and the rotation 
 
 ```return new_pos, degree_rotation```
 
+
+![Object moving](floor_spider.png)
+
+*An example of position of the spider*
+
 ## Creating a Likert scale
 
 I needed my participants to answer on this kind of scale when:
@@ -191,6 +196,10 @@ The function returns the list of Canvas to display, the positions of the buttons
 return(list_can, list_pos, radius_button, pos_submit_button)
 ```
 
+[Scale](question_speed.png)
+
+*The Likert scale in the test part (see below)*
+
 ## The training part
 
 Après présentation des consignes, les sujets voient deux fois les deux vitesses extrêmes (la plus lente et la plus rapide).
@@ -224,6 +233,10 @@ Pour que l'entraînement soit le plus neutre possible, il s'effectue avec un cer
 			#fait bouger le cercle pour chacune des deux vitesses, deux fois
 ```
 
+
+[Dot](dot.png)
+
+*The dot used to anchor the two extreme speeds in the training part*
 
 ## The test part
 
