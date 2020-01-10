@@ -196,7 +196,7 @@ The function returns the list of Canvas to display, the positions of the buttons
 return(list_can, list_pos, radius_button, pos_submit_button)
 ```
 
-[Scale](question_speed.png)
+![Scale](question_speed.png)
 
 *The Likert scale in the test part (see below)*
 
@@ -234,7 +234,7 @@ Pour que l'entraînement soit le plus neutre possible, il s'effectue avec un cer
 ```
 
 
-[Dot](dot.png)
+![Dot](dot.png)
 
 *The dot used to anchor the two extreme speeds in the training part*
 
