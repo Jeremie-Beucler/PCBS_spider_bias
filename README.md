@@ -351,14 +351,19 @@ score_quest = sum(list_score_quest)
 exp.data.add(["Score questionnaire", score_quest])
 ```
 
-## Bibliographie (à faire)
+## Bibliographie
 
-- article initial
-- première citation
-- article dvpt araignées schématiques
-- article EMT
-- fear of spiders
-- Expyriment
+Cosmides, L., & Tooby, J. (1994). Better than Rational: Evolutionary Psychology and the Invisible Hand. *American Economic Review*, 84(2), 327-332.
+
+Haselton, M. G., & Buss, D. M. (2000). Error management theory: A new perspective on biases in cross-sex mind reading. *Journal of personality and social psychology*, 78(1), 81-91.
+
+Krause, F. et Lindemann, O. (2014). Expyriment: A Python library for cognitive and neuroscientific experiments. *Behavior Research Methods*, 46(2), 416-428.
+
+Rakison, D. H., & Derringer, J. (2008). Do infants possess an evolved spider-detection mechanism? *Cognition*, 107(1), 381-393.
+
+Szymanski, J. and O’Donohue, W. (1995). Fear of spiders Questionnaire. Journal of Therapy and Experimental Psychiatry*, 26(1), 31-34.
+
+Witt, J. K., & Sugovic, M. (2013). Spiders appear to move faster than non-threatening objects regardless of one's ability to block them. *Acta Psychologica*, 143(3), 284–291.
 
 ## What I learned from this course
 
