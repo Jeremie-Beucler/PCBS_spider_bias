@@ -320,7 +320,23 @@ Puis l'on enregistre la vitesse de présentation de l'objet pour cet essai, ains
 
 The *Fear of Spiders Questionnaire* (FSQ; Szymanksi & O’Donohue, 1995) contains 18 items, for which participants have to answer on a seven-point Likert scale. It has proven to be sensitive to non-phobic fears of spider (Muris & Merckelbach, 1996), which is the reason why I have decided to use it in my experiment.
 
-+ read the .txt file to get the questions; same thing for checking if has clicked or not
+I translated the questionnaire in french, and put the questions in a *.txt* file. Then, thanks to the *Likert_scale* function I wrote for the speed evaluation part, I just had to read the file and to put the questions in a list.
+
+```
+question_file = open('questionnaire.txt')
+lignes = question_file.readlines()
+list_question = []
+for elt in lignes:
+	list_question.append(elt)
+question_file.close()
+#ajout de chaque question du questionnaire sur la peur des araignées dans une liste
+```
+The code which allowed the participant to answer is the same than in the training part. The total score of the questionnaire (ranging from 18 to 126) is also saved in the *.xpd* file, after the speed evaluations.
+
+```
+score_quest = sum(list_score_quest)
+exp.data.add(["Score questionnaire", score_quest])
+```
 
 ## Bibliographie (à faire)
 
@@ -328,6 +344,7 @@ The *Fear of Spiders Questionnaire* (FSQ; Szymanksi & O’Donohue, 1995) contain
 - première citation
 - article dvpt araignées schématiques
 - article EMT
+- fear of spiders
 - Expyriment
 
 ## What I learned from this course
