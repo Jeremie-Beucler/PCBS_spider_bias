@@ -25,9 +25,9 @@ To sum it up, in the present experiment, **participants will have to rate the sp
 
 The experiment consists in three parts:
 
-- the training part, where the participant familiarizes with the two extreme speeds (the lowest and the highest) by looking at the movements of a simple circle
-- the test part, where the participant has to juge, in each trial, the speed of one of the two objects; there are 28 trials (7 speeds seen twice x 2 object types)
-- the Fear of Spiders Questionnaire (18 items)
+- the **training part**, where the participant familiarizes with the two extreme speeds (the lowest and the highest) by looking at the movements of a simple circle
+- the **test part**, where the participant has to juge, in each trial, the speed of one of the two objects; there are 28 trials (7 speeds seen twice x 2 object types)
+- the **Fear of Spiders Questionnaire** (18 items)
 
 ## How to run the project
 
@@ -44,7 +44,7 @@ All the pictures were found on Google image and were free of rights. The logicie
 
 ### Creating the background
 
-As I could not use a downward-facing projector, I had to give the impression to the participant that he or she was looking down at the floor. In order to do that, I decided to create for each trial a [Canvas](https://docs.expyriment.org/expyriment.stimuli.Canvas.html) with a floor and the picture of neutral legs in blue jeans.
+As I could not use a downward-facing projector, **I had to give the impression to the participant that he or she was looking down at the floor**. In order to do that, I decided to create for each trial a [Canvas](https://docs.expyriment.org/expyriment.stimuli.Canvas.html) with a floor and the picture of neutral legs in blue jeans.
 
 The code was very simple, I just had to create the Canvas and to plot the pictures on it.
 
@@ -70,7 +70,7 @@ I decided to use different sorts of insects (e.g. dangerous or harmless ones, di
 
 ## Making the objects move
 
-I needed, for each trial, to make the object move as if it were alive. I thus designed a function to calculate the positions of the object.
+I needed, for each trial, to **make the object move as if it were alive**. I thus designed a function to calculate the positions of the object.
 
 ```
 def calc_pos(ancient_pos, verti_move, limit_verti):
@@ -133,7 +133,7 @@ I needed my participants to answer on this kind of scale when:
 - they judged the speed of the object in each trial
 - they answered the Fear of Spiders Questionnaire at the end of the experiment
 
-Therefore, writing a function with adjustable parameters was very useful. 
+Therefore, **writing a function with adjustable parameters was very useful**. 
 
 However, as I was working with Canvas objects, I did not manage to use the [TouchScreenButtonBox](https://docs.expyriment.org/expyriment.io.TouchScreenButtonBox.html) of Expyriment.
 
@@ -256,7 +256,7 @@ while pos_pic[1] >= -350
 
 After each presentation of the object at a determined speed, the participant has to rate the speed on a 7 points Likert scale. the code is a little long, as it needs to:
 
-- know where the participant clicked
+- **know where the participant clicked**
 
 ```
 		toile = questionnaire[0]
@@ -270,7 +270,7 @@ After each presentation of the object at a determined speed, the participant has
 			#enregistre la position cliquée par le participant
 ```
 
-- mark the button where the participant clicked
+- **mark the button where the participant clicked**
 
 N.B.: it implies to know if the mouse was on one of the response buttons, thanks to a *for loop* on the buttons' positions, taking into account their radius.
 
@@ -289,7 +289,7 @@ N.B.: it implies to know if the mouse was on one of the response buttons, thanks
 							toile.present()
 ```
 					
-- possibly correcting the first answer of the participant (by clearing the first one and marking the new button) 
+- **possibly correcting the first answer of the participant (by clearing the first one and marking the new button)** 
 
 ```
 			elif has_clicked_button != 0:
@@ -309,7 +309,7 @@ N.B.: it implies to know if the mouse was on one of the response buttons, thanks
 							ancient_pos_clicked = (elt, -50)
 ```
 
-- move to the next trial of the participant has validated his answer
+- **move to the next trial of the participant has validated his answer**
 
 ```		
 				if pos_tuple[0] < (pos_sub[0] + rad_button) and pos_tuple[0] > (pos_sub[0] - rad_button):
@@ -319,7 +319,7 @@ N.B.: it implies to know if the mouse was on one of the response buttons, thanks
 						
 ```
 
-- save the actual speed of the object and the subjective evaluation of the same speed by the participant 
+- **save the actual speed of the object and the subjective evaluation of the same speed by the participant** 
 
 ```
 						score = (int(ancient_pos_clicked[0]/100 + 4))
@@ -332,7 +332,7 @@ N.B.: it implies to know if the mouse was on one of the response buttons, thanks
 
 The *Fear of Spiders Questionnaire* (FSQ; Szymanksi & O’Donohue, 1995) contains 18 items, for which participants have to answer on a seven-point Likert scale. It has proven to be sensitive to non-phobic fears of spider (Muris & Merckelbach, 1996), which is the reason why I have decided to use it in my experiment.
 
-I translated the questionnaire in french, and put the questions in a *.txt* file. Then, thanks to the *Likert_scale* function I wrote for the speed evaluation part, I just had to read the file and to put the questions in a list.
+I translated the questionnaire in french, and put the questions in a *.txt* file. Then, thanks to the *Likert_scale* function I wrote for the speed evaluation part, **I simply had to read the *.txt* file and to put the questions in a list**.
 
 ```
 question_file = open('questionnaire.txt')
@@ -378,4 +378,4 @@ I feel like the course gave us a fantastic **toolbox** to use in our future proj
 
 I still have a lot to learn. For instance, I didn't used Expyriment in the most efficient way (I basically recoded the TouchScreenButtonBox as I didn't manage to use it whith a Canva object, and I didn't use the *"move"* function to move the stimuli). Also, my code could have been shorter and clearer.
 
-In the future, I would like to start using *R* for statistics and get familiarized with Matlab. I also intend to deepen my knowledge in Python - finishing Automatetheboringstuff would be a good start.
+In the future, I would like to start using *R* for statistics and get familiarized with Matlab. I also intend to deepen my knowledge in Python - finishing Automatetheboringstuff would be a pretty good start!
