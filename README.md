@@ -202,7 +202,7 @@ return(list_can, list_pos, radius_button, pos_submit_button)
 
 ## The training part
 
-Après présentation des consignes, les sujets voient deux fois les deux vitesses extrêmes (la plus lente et la plus rapide).
+After the instructions, the participants see twice the two extreme speeds (the slowest and the fastest).
 
 ```
 speeds_training = [10, 70]
@@ -215,7 +215,7 @@ for i in range(0, 2):
 		exp.keyboard.wait()
 ```
 
-Pour que l'entraînement soit le plus neutre possible, il s'effectue avec un cercle rouge se déplaçant. Sa position, actualisée toute les millisecondes, est calculée grâce à la fonction *calc_pos* présentée ci-dessus.
+For the training part to be neutral, the object was a red circle moving through the screen, whose position was calculated with the function *calc_pos* presented above.
 
 ```
 		pos_circle = [0,400]
@@ -240,7 +240,7 @@ Pour que l'entraînement soit le plus neutre possible, il s'effectue avec un cer
 
 ## The test part
 
-Pour chaque objet, les participants sont confrontés aux 7 vitesses deux fois, dans un ordre aléatoire.
+For each object, the participants see the 7 speeds twice, in a randomized order.
 
 ```
 for object in range(1, len(sys.argv)):
@@ -248,15 +248,15 @@ for object in range(1, len(sys.argv)):
 	random.shuffle(speeds)
 ```
 
-Ensuite, le code est le même que pour l'entraînement: la position de l'objet est calculée en fonction de sa vitesse toutes les millisecondes, jusqu'à ce qu'il disparaisse de l'écran (-350 sur l'axe vertical).
+The code is then the same as in the training part, the position of the object being calculated according to his speed every millisecond, until it is off the screen (-350 on the y-axis).
 
 ```
 while pos_pic[1] >= -350
 ```
 
-Ensuite, le questionnaire s'affiche pour que le participant évalue la vitesse de l'objet sur une échelle de 1 à 7. Le code est un peu long, dans la mesure où il faut:
+After each presentation of the object at a determined speed, the participant has to rate the speed on a 7 points Likert scale. the code is a little long, as it needs to:
 
-- savoir où est-ce que le participant a cliqué
+- know where the participant clicked
 
 ```
 		toile = questionnaire[0]
@@ -270,9 +270,9 @@ Ensuite, le questionnaire s'affiche pour que le participant évalue la vitesse d
 			#enregistre la position cliquée par le participant
 ```
 
-- puis cocher le bouton où le participant a cliqué
+- mark the button where the participant clicked
 
-Cela nécessite de savoir si le pointeur se trouvait sur un des boutons de réponse, grâce à une boucle *for* sur les positions des cercles en prenant en compte leur rayon, sur l'axe vertical et horizontal.
+N.B.: it implies to know if the mouse was on one of the response buttons, thanks to a *for loop* on the buttons' positions, taking into account their radius.
 
 ```
 			if has_clicked_button == 0:
@@ -289,7 +289,7 @@ Cela nécessite de savoir si le pointeur se trouvait sur un des boutons de répo
 							toile.present()
 ```
 					
-- prévoir un changement éventuel de réponse (en décochant l'ancien bouton et en recochant le nouveau
+- possibly correcting the first answer of the participant (by clearing the first one and marking the new button) 
 
 ```
 			elif has_clicked_button != 0:
@@ -309,8 +309,7 @@ Cela nécessite de savoir si le pointeur se trouvait sur un des boutons de répo
 							ancient_pos_clicked = (elt, -50)
 ```
 
-- passer à la vitesse suivante si le participant a répondu puis a validé sa réponse
-
+- move to the next trial of the participant has validated his answer
 
 ```		
 				if pos_tuple[0] < (pos_sub[0] + rad_button) and pos_tuple[0] > (pos_sub[0] - rad_button):
@@ -320,7 +319,7 @@ Cela nécessite de savoir si le pointeur se trouvait sur un des boutons de répo
 						
 ```
 
-Puis l'on enregistre la vitesse de présentation de l'objet pour cet essai, ainsi que l'évaluation du participant, et l'on passe à l'essai suivant.
+- save the actual speed of the object and the subjective evaluation of the same speed by the participant 
 
 ```
 						score = (int(ancient_pos_clicked[0]/100 + 4))
@@ -377,6 +376,6 @@ I feel like the course gave us a fantastic **toolbox** to use in our future proj
 
 ### What I still got to learn
 
-I still have a lot to learn. For instance, I didn't used Expyriment in the most efficient way (I basically recoded the TouchScreenButtonBox as I didn't manage to use it whith a Canva object, and I didn't use the *"move"* function to move the stimuli). Also, my code could have shorter and clearer.
+I still have a lot to learn. For instance, I didn't used Expyriment in the most efficient way (I basically recoded the TouchScreenButtonBox as I didn't manage to use it whith a Canva object, and I didn't use the *"move"* function to move the stimuli). Also, my code could have been shorter and clearer.
 
 In the future, I would like to start using *R* for statistics and get familiarized with Matlab. I also intend to deepen my knowledge in Python - finishing Automatetheboringstuff would be a good start.
