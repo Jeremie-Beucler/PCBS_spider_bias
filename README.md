@@ -38,7 +38,8 @@ The experiment consists in three parts:
 
 3) The data are stored in a *.xpd* file in the folder Data.
 
-Thanks to a simple loop seen in class, I was able to anticipate a possible mistake while entering the arguments.
+
+Thanks to a simple loop seen in class and put at the beginning of the code, it was possible to anticipate a possible mistake of the person using the program when he or she was entering the arguments.
 
 ```
 if len(sys.argv) < 3 or len(sys.argv) > 3:
