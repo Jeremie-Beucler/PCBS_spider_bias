@@ -381,6 +381,8 @@ exp.data.add(["Score questionnaire", score_quest])
 
 > Witt, J. K., & Sugovic, M. (2013). Spiders appear to move faster than non-threatening objects regardless of one's ability to block them. *Acta Psychologica*, 143(3), 284–291.
 
+***
+
 ## What I learned from this course
 
 ### My previous coding experience
