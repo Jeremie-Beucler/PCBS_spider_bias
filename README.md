@@ -23,7 +23,7 @@ To sum it up, in the present experiment, **participants will have to rate the sp
 
 ## Table of contents
 
-[Design of the experiment](#The design of the experiment)
+[Design of the experiment](#Design of the experiment)
 [How to run the project](#How to run the project)
 [Creating the stimuli](#Creating the stimuli)
 [Objects animation](#Objects animation)
