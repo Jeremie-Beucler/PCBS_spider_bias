@@ -1,12 +1,12 @@
 # Replicating the spider bias
 
->*Despite widespread claims to the contrary, the human mind is not worse than rational . . . but may often be better than rational.* (Cosmides and Tooby, 1994)([^1]a)
+>*Despite widespread claims to the contrary, the human mind is not worse than rational . . . but may often be better than rational.* (Cosmides and Tooby, 1994)
 
 ***
 
-Tenants of evolutionary psychology have argued that **cognitive biases are not flaws, but often well-adapted features of organisms** who have faced the same problems in their environment throughout their evolutionary history. For instance, it may be advantageous to overdetect predators, whereas it is very costly to underdetect them. This is predicted by **Error Management Theory** (EMT; Haselton & Buss, 2000)[^2], which is an application of the Signal Detection Theory to cognitive mechanisms that include noise or incertitude and for which the costs of the type of error (i.e. false alarm or missed detection) are not equal.
+Tenants of evolutionary psychology have argued that **cognitive biases are not flaws, but often well-adapted features of organisms** who have faced the same problems in their environment throughout their evolutionary history. For instance, it may be advantageous to overdetect predators, whereas it is very costly to underdetect them. This is predicted by **Error Management Theory** (EMT; Haselton & Buss, 2000), which is an application of the Signal Detection Theory to cognitive mechanisms that include noise or incertitude and for which the costs of the type of error (i.e. false alarm or missed detection) are not equal.
 
-In a 2013 article, Witt & Sugovic[^3] found that **we tend to inflate the speed of an approaching spider compared to a ball or a ladybug**; it may be adaptive as it increases our preparation time for action (e.g. fighting or fleeing).
+In a 2013 article, Witt & Sugovic found that **we tend to inflate the speed of an approaching spider compared to a ball or a ladybug**; it may be adaptive as it increases our preparation time for action (e.g. fighting or fleeing).
 
 ![](results_witt.png)
 
@@ -16,7 +16,7 @@ I intend to replicate their experiment, with some minor changes:
 
 - I won't implement their second factor, which was the size of the paddle used by the participants to block the incoming object (the threat to block and the size of the paddle acted independently from each other);
 - in their experiment, they used a downward-facing projector to display the stimuli on a table; as I can't afford to use one, I will try to replicate the effect using a standard computer screen and Expyriment;
-- in their experiment, they used a picture of a real spider; it may be interesting to **add some schematic representations of spiders to see if the bias is still there** (if it is, it may strenghtens the view that we possess some kind of "spider template", as found in infants by Rakison & Derringer, 2007)[^4], and to use other types of insect (which inspire disgust or not; which may harm us or not)
+- in their experiment, they used a picture of a real spider; it may be interesting to **add some schematic representations of spiders to see if the bias is still there** (if it is, it may strenghtens the view that we possess some kind of "spider template", as found in infants by Rakison & Derringer, 2007), and to use other types of insect (which inspire disgust or not; which may harm us or not)
 - it may be interesting to **see if this effect is modulated by fear of spiders**
 
 To sum it up, in the present experiment, **participants will have to rate the speed of different objects coming towards them**. We expect **a main effect of Object type: the speed of the spider (real or schematic) will be inflated compared to other objects**.  We also expect **an interaction between Fear of spiders and Object type (the stronger the fear, the stronger the bias)**.
@@ -49,7 +49,7 @@ The experiment consists in three parts:
 
 In order to run this program, you need to have already installed on your computer:
 - [x] **[Python 3](https://www.python.org/download/releases/3.0/)**;
-- [x] **[Expyriment](https://www.expyriment.org/)**.[^5]
+- [x] **[Expyriment](https://www.expyriment.org/)**.
 
 <ins>Procedure</ins>
 
@@ -374,7 +374,7 @@ N.B.: it implies to know if the mouse was on one of the response buttons, thanks
 
 ## <a name="questionnaire"></a>The questionnaire part
 
-The *Fear of Spiders Questionnaire* (FSQ; Szymanksi & O’Donohue, 1995)[^6] contains 18 items, for which participants have to answer on a seven-point Likert scale. It has proven to be sensitive to non-phobic fears of spider (Muris & Merckelbach, 1996), which is the reason I decided to use it in my experiment.
+The *Fear of Spiders Questionnaire* (FSQ; Szymanksi & O’Donohue, 1995) contains 18 items, for which participants have to answer on a seven-point Likert scale. It has proven to be sensitive to non-phobic fears of spider (Muris & Merckelbach, 1996), which is the reason I decided to use it in my experiment.
 
 I translated the questionnaire in french, and put the questions in a *.txt* file. Then, thanks to the *Likert_scale* function I wrote for the speed evaluation part, **I simply had to read the *.txt* file and to put the questions in a list**.
 
@@ -396,17 +396,17 @@ exp.data.add(["Score questionnaire", score_quest])
 
 ## <a name="bibliography"></a>Bibliography
 
-> ([^1]) Cosmides, L., & Tooby, J. (1994). Better than Rational: Evolutionary Psychology and the Invisible Hand. *American Economic Review*, 84(2), 327-332.
+> Cosmides, L., & Tooby, J. (1994). Better than Rational: Evolutionary Psychology and the Invisible Hand. *American Economic Review*, 84(2), 327-332.
 
-> [^2] Haselton, M. G., & Buss, D. M. (2000). Error management theory: A new perspective on biases in cross-sex mind reading. *Journal of personality and social psychology*, 78(1), 81-91.
+> Haselton, M. G., & Buss, D. M. (2000). Error management theory: A new perspective on biases in cross-sex mind reading. *Journal of personality and social psychology*, 78(1), 81-91.
 
-> [^5] Krause, F. et Lindemann, O. (2014). Expyriment: A Python library for cognitive and neuroscientific experiments. *Behavior Research Methods*, 46(2), 416-428.
+> Krause, F. et Lindemann, O. (2014). Expyriment: A Python library for cognitive and neuroscientific experiments. *Behavior Research Methods*, 46(2), 416-428.
 
-> [^4] Rakison, D. H., & Derringer, J. (2008). Do infants possess an evolved spider-detection mechanism? *Cognition*, 107(1), 381-393.
+> Rakison, D. H., & Derringer, J. (2008). Do infants possess an evolved spider-detection mechanism? *Cognition*, 107(1), 381-393.
 
-> [^6] Szymanski, J. and O’Donohue, W. (1995). Fear of spiders Questionnaire. *Journal of Therapy and Experimental Psychiatry*, 26(1), 31-34.
+> Szymanski, J. and O’Donohue, W. (1995). Fear of spiders Questionnaire. *Journal of Therapy and Experimental Psychiatry*, 26(1), 31-34.
 
-> [^3] Witt, J. K., & Sugovic, M. (2013). Spiders appear to move faster than non-threatening objects regardless of one's ability to block them. *Acta Psychologica*, 143(3), 284–291.
+> Witt, J. K., & Sugovic, M. (2013). Spiders appear to move faster than non-threatening objects regardless of one's ability to block them. *Acta Psychologica*, 143(3), 284–291.
 
 ***
 
