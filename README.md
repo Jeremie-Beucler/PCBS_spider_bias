@@ -21,18 +21,18 @@ I intend to replicate their experiment, with some minor changes:
 
 To sum it up, in the present experiment, **participants will have to rate the speed of different objects coming towards them**. We expect **a main effect of Object type: the speed of the spider (real or schematic) will be inflated compared to other objects**.  We also expect **an interaction between Fear of spiders and Object type (the stronger the fear, the stronger the bias)**.
 
-## Table des matières
+## Table of contents
 
-[Design of the experiment](## The design of the experiment)
-[How to run the project](## How to run the project)
-[Creating the stimuli](## Creating the stimuli)
-[Objects animation](## Objects animation)
-[Creating a Likert scale](## Creating a Likert scale)
-[The training part](## The training part)
-[The test part](## The test part)
-[The questionnaire part](## The questionnaire part)
-[Bibliography](## Bibliography)
-[What I learned from this course](## What I learned from this course)
+[Design of the experiment](#The design of the experiment)
+[How to run the project](#How to run the project)
+[Creating the stimuli](#Creating the stimuli)
+[Objects animation](#Objects animation)
+[Creating a Likert scale](#Creating a Likert scale)
+[The training part](#The training part)
+[The test part](#The test part)
+[The questionnaire part](#The questionnaire part)
+[Bibliography](#Bibliography)
+[What I learned from this course](#What I learned from this course)
 
 
 ## Design of the experiment
