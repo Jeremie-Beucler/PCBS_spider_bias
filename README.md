@@ -88,7 +88,7 @@ As I could not use a downward-facing projector, **I had to give the impression t
 
 The code was very simple, I just had to create the Canvas and to plot the pictures on it.
 
-```
+```python
 toile_pieds = expyriment.stimuli.Canvas(size=(1000,800), colour=(255,255,255))
 sol = expyriment.stimuli.Picture('plancher.png')
 sol.plot(toile_pieds)
@@ -112,7 +112,7 @@ I decided to use different sorts of insects (e.g. dangerous or harmless ones, di
 
 I needed, for each trial, to **make the object move as if it were alive**. I thus designed a function to calculate the positions of the object.
 
-```
+```python
 def calc_pos(ancient_pos, verti_move, limit_verti):
 	"""Defines the new position of a stimulus, whith a random horizontal movement and a fixed vertical one. 
 	   When the stimulus crosses a fixed point on the y axis, the object makes a diagonal depending on which side
@@ -130,7 +130,7 @@ At first, I tried to use the *"Move"* function of Expyriment, but I did not succ
 
 The vertical move corresponds to the speed of the object, one of the variable of interest in the experiment. Thanks to the *random* function, I managed to give a random horizontal move to the stimuli (-5, 0 or 5), in order to make it look like it was moving on its own.
 
-```
+```python
 new_pos = [ancient_pos[0],(ancient_pos[1] + -1 * verti_move)]
 	# translation du stimulus sur l'axe des y
 	random_hori_move = random.randrange(-5,6,5)
@@ -138,14 +138,14 @@ new_pos = [ancient_pos[0],(ancient_pos[1] + -1 * verti_move)]
 
 The stimulus also had to rotate in the horizontal direction it was going to, for the movement to be more realistic
 
-```
+```python
 degree_rotation = random_hori_move
 new_pos[0] += random_hori_move
 ```
 
 The last block of code was used only if the stimulus was approaching the feet in the background picture; when it crosses the threshold, the stimulus chooses the side of the screen in which it was to move diagonally.
 
-```
+```python
 if new_pos[0] >= 0:
 		# si le stimulus était dans la partie droite de l'écran
 			new_pos[0] += 5 * (verti_move//5)
@@ -160,7 +160,9 @@ else:
 
 And the function simply returns the new position of the object and the rotation to apply to it.
 
-```return new_pos, degree_rotation```
+```python
+return new_pos, degree_rotation
+```
 
 
 ![Object moving](floor_spider.png)
@@ -177,7 +179,7 @@ Therefore, **writing a function with adjustable parameters was very useful**.
 
 However, as I was working with Canvas objects, I did not manage to use the [TouchScreenButtonBox](https://docs.expyriment.org/expyriment.io.TouchScreenButtonBox.html) of Expyriment.
 
-```
+```python
 def Likert_scale(N, legendes, questions):
 	"""Draws a Likert scale with buttons and text for legend and questions
 	
@@ -192,7 +194,7 @@ def Likert_scale(N, legendes, questions):
 ```
 Firstly, I had to place the response buttons on the x-axis. I just had to compute the extreme points of the scale and to multiply them by the relative distance between the circles. I then added each position in a list.
 
-```
+```python
 extremite_echelle = int((N - 1)/2)
 	#e.g. si l'échelle est à 7 points, on obtient 3 (l'échelle va de -3 à 3)
 	distance_cercles = 700/N
@@ -204,7 +206,7 @@ extremite_echelle = int((N - 1)/2)
 ```
 I then created the buttons stimuli and the legends stimuli.
 
-```
+```python
 for i in range(N):
 			button = expyriment.stimuli.Circle(radius=radius_button, position=(list_pos[i],-50), colour=(0,0,0), line_width=2)
 			list_button.append(button)
@@ -215,7 +217,7 @@ for i in range(N):
 
 In the last block of code, I create a Canvas object for each question. I then plot on it the buttons, the legends, the question and a submit button. Finally, I just have to add each Canvas to a list returned by the function.
 
-```
+```python
 for i in range(len(questions)):
 		toile = expyriment.stimuli.Canvas(size=(800,600), colour=(255,255,255))
 		for elt in list_button:
@@ -232,7 +234,7 @@ for i in range(len(questions)):
 
 The function returns the list of Canvas to display, the positions of the buttons, their radius and the position of the submit button. It will be quite useful as I will need to check whether the participant clicked on the button to determine his or her answer.
 
-```
+```python
 return(list_can, list_pos, radius_button, pos_submit_button)
 ```
 
@@ -244,7 +246,7 @@ return(list_can, list_pos, radius_button, pos_submit_button)
 
 After the instructions, the participants see twice the two extreme speeds (the slowest and the fastest).
 
-```
+```python
 speeds_training = [10, 70]
 # les sujets ne voient pendant l'entraînement que les deux vitesses extrêmes
 for i in range(0, 2):
@@ -257,7 +259,7 @@ for i in range(0, 2):
 
 For the training part to be neutral, the object was a red circle moving through the screen, whose position was calculated with the function *calc_pos* presented above.
 
-```
+```python
 		pos_circle = [0,400]
 		while pos_circle[1] >= -350:
 			pos_circle, deg_rot = calc_pos(pos_circle,speed,-75)
@@ -282,7 +284,7 @@ For the training part to be neutral, the object was a red circle moving through 
 
 For each object, the participants see the 7 speeds twice, in a randomized order.
 
-```
+```python
 for object in list_object:
 	speeds = [10, 20, 30, 40, 50, 60, 70] * 2
 	random.shuffle(speeds)
@@ -290,7 +292,7 @@ for object in list_object:
 
 The code is then the same as in the training part, the position of the object being calculated according to his speed every millisecond, until it is off the screen (-350 on the y-axis).
 
-```
+```python
 while pos_pic[1] >= -350
 ```
 
@@ -298,7 +300,7 @@ After each presentation of the object at a determined speed, the participant has
 
 - **know where the participant clicked**
 
-```
+```python
 		toile = questionnaire[0]
 		toile.present()
 		expyriment.io.Mouse(show_cursor=True)
@@ -314,7 +316,7 @@ After each presentation of the object at a determined speed, the participant has
 
 N.B.: it implies to know if the mouse was on one of the response buttons, thanks to a *for loop* on the buttons' positions, taking into account their radius.
 
-```
+```python
 			if has_clicked_button == 0:
 			#si le participant clique pour la première fois dans un des boutons
 				for elt in position_cercles:
@@ -331,7 +333,7 @@ N.B.: it implies to know if the mouse was on one of the response buttons, thanks
 					
 - **possibly correcting the first answer of the participant (by clearing the first one and marking the new button)** 
 
-```
+```python
 			elif has_clicked_button != 0:
 			#si le participant a déjà répondu une fois
 				for elt in position_cercles:
@@ -351,7 +353,7 @@ N.B.: it implies to know if the mouse was on one of the response buttons, thanks
 
 - **move to the next trial of the participant has validated his answer**
 
-```		
+```python		
 				if pos_tuple[0] < (pos_sub[0] + rad_button) and pos_tuple[0] > (pos_sub[0] - rad_button):
 					if pos_tuple[1] < (pos_sub[1] + rad_button) and pos_tuple[1] > (pos_sub[1] - rad_button):
 						has_clicked_submit += 1
@@ -361,7 +363,7 @@ N.B.: it implies to know if the mouse was on one of the response buttons, thanks
 
 - **save the actual speed of the object and the subjective evaluation of the same speed by the participant** 
 
-```
+```python
 						score = (int(ancient_pos_clicked[0]/100 + 4))
 						#permet de passer des positions des cercles (-300, -200, etc.) aux points (de 1 à 7 ici)
 		exp.data.add([object, (speed //10), score])
@@ -374,7 +376,7 @@ The *Fear of Spiders Questionnaire* (FSQ; Szymanksi & O’Donohue, 1995) contain
 
 I translated the questionnaire in french, and put the questions in a *.txt* file. Then, thanks to the *Likert_scale* function I wrote for the speed evaluation part, **I simply had to read the *.txt* file and to put the questions in a list**.
 
-```
+```python
 question_file = open('questionnaire.txt')
 lignes = question_file.readlines()
 list_question = []
@@ -385,7 +387,7 @@ question_file.close()
 ```
 The code which allowed the participant to answer is the same than in the training part. The total score of the questionnaire (ranging from 18 to 126) is also saved in the *.xpd* file, after the speed evaluations.
 
-```
+```python
 score_quest = sum(list_score_quest)
 exp.data.add(["Score questionnaire", score_quest])
 ```
