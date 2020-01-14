@@ -45,6 +45,12 @@ The experiment consists in three parts:
 
 ## <a name="run"></a>How to run the project
 
+<ins>Required softwares</ins>
+
+In order to run this program, you need to have **[Python 3](https://www.python.org/download/releases/3.0/)** and **[Expyriment](https://www.expyriment.org/)** installed on your computer.
+
+<ins>Procedure</ins>
+
 1. Clone the repository on your computer using a terminal
 2. Launch the program from your terminal: it takes two argument (the objects you want to compare)
 3. The data are stored in a *.xpd* file in the folder Data.
