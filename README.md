@@ -64,7 +64,7 @@ In order to run this program, you need to have **[Python 3](https://www.python.o
 
 Thanks to a simple loop seen in class and put at the beginning of the code, it was possible to anticipate a possible mistake of the person using the program when he or she was entering the arguments.
 
-```
+```python
 if len(sys.argv) < 3 or len(sys.argv) > 3:
 	print("")
 	print("Usage: you need to enter two arguments - the two objects you want to compare - to run this program.")
