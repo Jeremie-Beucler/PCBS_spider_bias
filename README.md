@@ -1,6 +1,6 @@
 # Replicating the spider bias
 
->*Despite widespread claims to the contrary, the human mind is not worse than rational . . . but may often be better than rational.* (Cosmides and Tooby, 1994)[^1]
+>*Despite widespread claims to the contrary, the human mind is not worse than rational . . . but may often be better than rational.* ((Cosmides and Tooby, 1994)[^1])
 
 ***
 
@@ -396,7 +396,7 @@ exp.data.add(["Score questionnaire", score_quest])
 
 ## <a name="bibliography"></a>Bibliography
 
-> [^1] Cosmides, L., & Tooby, J. (1994). Better than Rational: Evolutionary Psychology and the Invisible Hand. *American Economic Review*, 84(2), 327-332.
+> ([^1]) Cosmides, L., & Tooby, J. (1994). Better than Rational: Evolutionary Psychology and the Invisible Hand. *American Economic Review*, 84(2), 327-332.
 
 > [^2] Haselton, M. G., & Buss, D. M. (2000). Error management theory: A new perspective on biases in cross-sex mind reading. *Journal of personality and social psychology*, 78(1), 81-91.
 
