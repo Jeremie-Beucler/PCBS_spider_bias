@@ -57,7 +57,7 @@ In order to run this program, you need to have **[Python 3](https://www.python.o
 
 ***
 
-E.g.: *if you want to compare the evaluation of the speed of a spider and of the speed of a fly, type:* "python Spider_bias.py tegenaria_domestica.png musca_domestica.png"
+<ins>E.g.</ins>: if you want to compare the evaluation of the speed of a spider and of the speed of a fly, type: *"python Spider_bias.py tegenaria_domestica.png musca_domestica.png"*
 
 ***
 
