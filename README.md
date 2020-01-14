@@ -14,10 +14,10 @@ In a 2013 article, Witt & Sugovic found that **we tend to inflate the speed of a
 
 I intend to replicate their experiment, with some minor changes:
 
-- [x] I won't implement their second factor, which was the size of the paddle used by the participants to block the incoming object (the threat to block and the size of the paddle acted independently from each other);
-- [x] in their experiment, they used a downward-facing projector to display the stimuli on a table; as I can't afford to use one, I will try to replicate the effect using a standard computer screen and Expyriment;
-- [x] in their experiment, they used a picture of a real spider; it may be interesting to **add some schematic representations of spiders to see if the bias is still there** (if it is, it may strenghtens the view that we possess some kind of "spider template", as found in infants by Rakison & Derringer, 2007), and to use other types of insect (which inspire disgust or not; which may harm us or not)
-- [x] it may be interesting to **see if this effect is modulated by fear of spiders**
+- I won't implement their second factor, which was the size of the paddle used by the participants to block the incoming object (the threat to block and the size of the paddle acted independently from each other);
+- in their experiment, they used a downward-facing projector to display the stimuli on a table; as I can't afford to use one, I will try to replicate the effect using a standard computer screen and Expyriment;
+- in their experiment, they used a picture of a real spider; it may be interesting to **add some schematic representations of spiders to see if the bias is still there** (if it is, it may strenghtens the view that we possess some kind of "spider template", as found in infants by Rakison & Derringer, 2007), and to use other types of insect (which inspire disgust or not; which may harm us or not)
+- it may be interesting to **see if this effect is modulated by fear of spiders**
 
 To sum it up, in the present experiment, **participants will have to rate the speed of different objects coming towards them**. We expect **a main effect of Object type: the speed of the spider (real or schematic) will be inflated compared to other objects**.  We also expect **an interaction between Fear of spiders and Object type (the stronger the fear, the stronger the bias)**.
 
@@ -51,9 +51,9 @@ In order to run this program, you need to have **[Python 3](https://www.python.o
 
 <ins>Procedure</ins>
 
-1. Clone the repository on your computer using a terminal
-2. Launch the program from your terminal: it takes two argument (the objects you want to compare)
-3. The data are stored in a *.xpd* file in the folder Data.
+- [x] Clone the repository on your computer using a terminal
+- [x] Launch the program from your terminal: it takes two argument (the objects you want to compare)
+- [x] The data are stored in a *.xpd* file in the folder Data.
 
 ***
 
