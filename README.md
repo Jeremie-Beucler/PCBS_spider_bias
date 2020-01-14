@@ -31,7 +31,7 @@ To sum it up, in the present experiment, **participants will have to rate the sp
 - [The training part](#training)
 - [The test part](#test)
 - [The questionnaire part](#questionnaire)
-- [Bibliography](#Bibliography)
+- [Bibliography](#bibliography)
 - [What I learned from this course](#learned)
 
 
@@ -384,7 +384,7 @@ score_quest = sum(list_score_quest)
 exp.data.add(["Score questionnaire", score_quest])
 ```
 
-## Bibliography
+## <a name="bibliography"></a>Bibliography
 
 > Cosmides, L., & Tooby, J. (1994). Better than Rational: Evolutionary Psychology and the Invisible Hand. *American Economic Review*, 84(2), 327-332.
 
