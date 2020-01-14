@@ -23,16 +23,16 @@ To sum it up, in the present experiment, **participants will have to rate the sp
 
 ## Table of contents
 
-1. [Design of the experiment](#design)
-2. [How to run the project](#run)
-3. [Creating the stimuli](#Creating the stimuli)
-4. [Objects animation](#Objects animation)
-5. [Creating a Likert scale](#Creating a Likert scale)
-6. [The training part](#The training part)
-7. [The test part](#The test part)
-8. [The questionnaire part](#The questionnaire part)
-9. [Bibliography](#Bibliography)
-10. [What I learned from this course](# What I learned from this course)
+- [Design of the experiment](#design)
+- [How to run the project](#run)
+- [Creating the stimuli](#stimuli)
+- [Objects animation](#animation)
+- [Creating a Likert scale](#likert)
+- [The training part](#training)
+- [The test part](#test)
+- [The questionnaire part](#questionnaire)
+- [Bibliography](#Bibliography)
+- [What I learned from this course](#learned)
 
 
 ## <a name="design"></a>Design of the experiment
@@ -69,7 +69,7 @@ else:
 	list_object.append(sys.argv[2])
 ```
 
-## Creating the stimuli
+## <a name="stimuli"></a>Creating the stimuli
 
 All the pictures were found on Google image and were free of rights. The logiciel [Gimp](https://www.gimp.org/fr/) was used to trim each picture from its background.
 
@@ -99,7 +99,7 @@ I decided to use different sorts of insects (e.g. dangerous or harmless ones, di
 
 *The picture of a spider used in the experiment ("Tegenaria domestica", the kind that hides in our basements in Europe)*
 
-## Objects animation
+## <a name="animation"></a>Objects animation
 
 I needed, for each trial, to **make the object move as if it were alive**. I thus designed a function to calculate the positions of the object.
 
@@ -158,7 +158,7 @@ And the function simply returns the new position of the object and the rotation 
 
 *An example of position of the spider*
 
-## Creating a Likert scale
+## <a name="likert"></a>Creating a Likert scale
 
 I needed my participants to answer on this kind of scale when:
 - they judged the speed of the object in each trial
@@ -231,7 +231,7 @@ return(list_can, list_pos, radius_button, pos_submit_button)
 
 *The Likert scale in the test part (see below)*
 
-## The training part
+## <a name="training"></a>The training part
 
 After the instructions, the participants see twice the two extreme speeds (the slowest and the fastest).
 
@@ -269,7 +269,7 @@ For the training part to be neutral, the object was a red circle moving through 
 
 *The dot used to anchor the two extreme speeds in the training part*
 
-## The test part
+## <a name="test"></a>The test part
 
 For each object, the participants see the 7 speeds twice, in a randomized order.
 
@@ -359,7 +359,7 @@ N.B.: it implies to know if the mouse was on one of the response buttons, thanks
 	
 ```
 
-## The questionnaire part
+## <a name="questionnaire"></a>The questionnaire part
 
 The *Fear of Spiders Questionnaire* (FSQ; Szymanksi & O’Donohue, 1995) contains 18 items, for which participants have to answer on a seven-point Likert scale. It has proven to be sensitive to non-phobic fears of spider (Muris & Merckelbach, 1996), which is the reason I decided to use it in my experiment.
 
@@ -406,7 +406,7 @@ Before the course, I had followed a one-semester introductory course on Python. 
 Thanks to the first classes, I was able to code for a simpler experiment we had to create at University Paris Descartes; it allowed me to get acquainted with Expyriment and Github (if you want to give it a look, [here](https://jeremie-beucler.github.io/Memoire-APR3/) is the link for its *Github* page).
 
 
-### What I learned
+### <a name="learned"></a>What I learned
 
 I feel like the course gave us a fantastic **toolbox** to use in our future projects: Pygame, Expyriment, Github, github.io, Pandas, the PCBS ressources and Automatetheboringstuff... Furthermore, we also learned about **good scientific practices**: the clarity of the code, the availability of the data and of the material used in the experiment (thanks to Github, for instance).
 
