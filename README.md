@@ -23,16 +23,16 @@ To sum it up, in the present experiment, **participants will have to rate the sp
 
 ## Table of contents
 
-- [Design of the experiment](#design)
-- [How to run the project](#run)
-- [Creating the stimuli](#stimuli)
-- [Objects animation](#animation)
-- [Creating a Likert scale](#likert)
-- [The training part](#training)
-- [The test part](#test)
-- [The questionnaire part](#questionnaire)
-- [Bibliography](#Bibliography)
-- [What I learned from this course](#learned)
+  [Design of the experiment](#design)
+  [How to run the project](#run)
+  [Creating the stimuli](#stimuli)
+  [Objects animation](#animation)
+  [Creating a Likert scale](#likert)
+  [The training part](#training)
+  [The test part](#test)
+  [The questionnaire part](#questionnaire)
+  [Bibliography](#Bibliography)
+  [What I learned from this course](#learned)
 
 
 ## <a name="design"></a>Design of the experiment
@@ -50,7 +50,9 @@ The experiment consists in three parts:
 3. The data are stored in a *.xpd* file in the folder Data.
 
 ***
+
 E.g.: *if you want to compare the evaluation of the speed of a spider and of the speed of a fly, type:* "python Spider_bias.py tegenaria_domestica.png musca_domestica.png"
+
 ***
 
 
