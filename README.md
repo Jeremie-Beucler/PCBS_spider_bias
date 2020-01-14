@@ -47,12 +47,14 @@ The experiment consists in three parts:
 
 <ins>Required softwares</ins>
 
-In order to run this program, you need to have **[Python 3](https://www.python.org/download/releases/3.0/)** and **[Expyriment](https://www.expyriment.org/)** installed on your computer.
+In order to run this program, you need to have already installed on your computer:
+- [x] **[Python 3](https://www.python.org/download/releases/3.0/)**;
+- [x] **[Expyriment](https://www.expyriment.org/)**.
 
 <ins>Procedure</ins>
 
-- [x] Clone the repository on your computer using a terminal
-- [x] Launch the program from your terminal: it takes two argument (the objects you want to compare)
+- [x] Clone the repository on your computer using a terminal;
+- [x] Launch the program from your terminal: it takes two argument (the objects you want to compare);
 - [x] The data are stored in a *.xpd* file in the folder Data.
 
 ***
