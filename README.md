@@ -49,8 +49,9 @@ The experiment consists in three parts:
 2. Launch the program from your terminal: it takes two argument (the objects you want to compare)
 3. The data are stored in a *.xpd* file in the folder Data.
 
-*E.g. if you want to compare the evaluation of the speed of a spider and of the speed of a fly, type:* "python Spider_bias.py tegenaria_domestica.png musca_domestica.png"
-
+***
+E.g.: *if you want to compare the evaluation of the speed of a spider and of the speed of a fly, type:* "python Spider_bias.py tegenaria_domestica.png musca_domestica.png"
+***
 
 
 Thanks to a simple loop seen in class and put at the beginning of the code, it was possible to anticipate a possible mistake of the person using the program when he or she was entering the arguments.
