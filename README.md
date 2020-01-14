@@ -21,7 +21,21 @@ I intend to replicate their experiment, with some minor changes:
 
 To sum it up, in the present experiment, **participants will have to rate the speed of different objects coming towards them**. We expect **a main effect of Object type: the speed of the spider (real or schematic) will be inflated compared to other objects**.  We also expect **an interaction between Fear of spiders and Object type (the stronger the fear, the stronger the bias)**.
 
-## The design of the experiment
+## Table des matières
+
+[Design of the experiment](## The design of the experiment)
+[How to run the project](## How to run the project)
+[Creating the stimuli](## Creating the stimuli)
+[Objects animation](## Objects animation)
+[Creating a Likert scale](## Creating a Likert scale)
+[The training part](## The training part)
+[The test part](## The test part)
+[The questionnaire part](## The questionnaire part)
+[Bibliography](## Bibliography)
+[What I learned from this course](## What I learned from this course)
+
+
+## Design of the experiment
 
 The experiment consists in three parts:
 
@@ -85,7 +99,7 @@ I decided to use different sorts of insects (e.g. dangerous or harmless ones, di
 
 *The picture of a spider used in the experiment ("Tegenaria domestica", the kind that hides in our basements in Europe)*
 
-## Making the objects move
+## Objects animation
 
 I needed, for each trial, to **make the object move as if it were alive**. I thus designed a function to calculate the positions of the object.
 
@@ -347,7 +361,7 @@ N.B.: it implies to know if the mouse was on one of the response buttons, thanks
 
 ## The questionnaire part
 
-The *Fear of Spiders Questionnaire* (FSQ; Szymanksi & O’Donohue, 1995) contains 18 items, for which participants have to answer on a seven-point Likert scale. It has proven to be sensitive to non-phobic fears of spider (Muris & Merckelbach, 1996), which is the reason why I have decided to use it in my experiment.
+The *Fear of Spiders Questionnaire* (FSQ; Szymanksi & O’Donohue, 1995) contains 18 items, for which participants have to answer on a seven-point Likert scale. It has proven to be sensitive to non-phobic fears of spider (Muris & Merckelbach, 1996), which is the reason I decided to use it in my experiment.
 
 I translated the questionnaire in french, and put the questions in a *.txt* file. Then, thanks to the *Likert_scale* function I wrote for the speed evaluation part, **I simply had to read the *.txt* file and to put the questions in a list**.
 
@@ -367,7 +381,7 @@ score_quest = sum(list_score_quest)
 exp.data.add(["Score questionnaire", score_quest])
 ```
 
-## Bibliographie
+## Bibliography
 
 > Cosmides, L., & Tooby, J. (1994). Better than Rational: Evolutionary Psychology and the Invisible Hand. *American Economic Review*, 84(2), 327-332.
 
@@ -389,7 +403,10 @@ exp.data.add(["Score questionnaire", score_quest])
 
 Before the course, I had followed a one-semester introductory course on Python. I thus knew the basics of the language (how to use a loop, how to build a function, and so forth), but I had never worked on a precise library before (such as Expyriment) nor had I written a full-scale functioning program.
 
-### What I learned from this course
+Thanks to the first classes, I was able to code for a simpler experiment we had to create at University Paris Descartes; it allowed me to get acquainted with Expyriment and Github (if you want to give it a look, [here](https://jeremie-beucler.github.io/Memoire-APR3/) is the link for its *Github* page).
+
+
+### What I learned
 
 I feel like the course gave us a fantastic **toolbox** to use in our future projects: Pygame, Expyriment, Github, github.io, Pandas, the PCBS ressources and Automatetheboringstuff... Furthermore, we also learned about **good scientific practices**: the clarity of the code, the availability of the data and of the material used in the experiment (thanks to Github, for instance).
 
