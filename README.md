@@ -23,8 +23,8 @@ To sum it up, in the present experiment, **participants will have to rate the sp
 
 ## Table of contents
 
-1. [Design of the experiment](#Design of the experiment)
-2. [How to run the project](#How to run the project)
+1. [Design of the experiment](#design)
+2. [How to run the project](#run)
 3. [Creating the stimuli](#Creating the stimuli)
 4. [Objects animation](#Objects animation)
 5. [Creating a Likert scale](#Creating a Likert scale)
@@ -35,7 +35,7 @@ To sum it up, in the present experiment, **participants will have to rate the sp
 10. [What I learned from this course](# What I learned from this course)
 
 
-## Design of the experiment
+## <a name="design"></a>Design of the experiment
 
 The experiment consists in three parts:
 
@@ -43,7 +43,7 @@ The experiment consists in three parts:
 - the **test part**, where the participant has to juge, in each trial, the speed of one of the two objects; there are 28 trials (7 speeds seen twice x 2 object types)
 - the **Fear of Spiders Questionnaire** (18 items)
 
-## How to run the project
+## <a name="run"></a>How to run the project
 
 1) Clone the repository on your computer using a terminal
 2) Launch the program from your terminal: it takes two argument (the objects you want to compare)
