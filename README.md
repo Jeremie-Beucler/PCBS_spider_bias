@@ -394,7 +394,7 @@ exp.data.add(["Score questionnaire", score_quest])
 
 > Rakison, D. H., & Derringer, J. (2008). Do infants possess an evolved spider-detection mechanism? *Cognition*, 107(1), 381-393.
 
-> Szymanski, J. and O’Donohue, W. (1995). Fear of spiders Questionnaire. Journal of Therapy and Experimental Psychiatry*, 26(1), 31-34.
+> Szymanski, J. and O’Donohue, W. (1995). Fear of spiders Questionnaire. *Journal of Therapy and Experimental Psychiatry*, 26(1), 31-34.
 
 > Witt, J. K., & Sugovic, M. (2013). Spiders appear to move faster than non-threatening objects regardless of one's ability to block them. *Acta Psychologica*, 143(3), 284–291.
 
