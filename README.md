@@ -1,6 +1,6 @@
 # Replicating the spider bias
 
->*Despite widespread claims to the contrary, the human mind is not worse than rational . . . but may often be better than rational.* ((Cosmides and Tooby, 1994)[^1])
+>*Despite widespread claims to the contrary, the human mind is not worse than rational . . . but may often be better than rational.* (Cosmides and Tooby, 1994)([^1])
 
 ***
 
