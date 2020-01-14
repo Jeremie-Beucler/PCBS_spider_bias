@@ -23,16 +23,25 @@ To sum it up, in the present experiment, **participants will have to rate the sp
 
 ## Table of contents
 
-[Design of the experiment](#Design of the experiment)
+[Design of the experiment] (#Design of the experiment)
+
 [How to run the project](#How to run the project)
+
 [Creating the stimuli](#Creating the stimuli)
+
 [Objects animation](#Objects animation)
+
 [Creating a Likert scale](#Creating a Likert scale)
+
 [The training part](#The training part)
+
 [The test part](#The test part)
+
 [The questionnaire part](#The questionnaire part)
+
 [Bibliography](#Bibliography)
-[What I learned from this course](#What I learned from this course)
+
+[What I learned from this course](# What I learned from this course)
 
 
 ## Design of the experiment
