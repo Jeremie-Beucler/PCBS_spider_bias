@@ -48,8 +48,8 @@ The experiment consists in three parts:
 <ins>Required softwares</ins>
 
 In order to run this program, you need to have already installed on your computer:
-- [x] **[Python 3](https://www.python.org/download/releases/3.0/)**;
-- [x] **[Expyriment](https://www.expyriment.org/)**.
+[x]  **[Python 3](https://www.python.org/download/releases/3.0/)**;
+[x]  **[Expyriment](https://www.expyriment.org/)**.
 
 <ins>Procedure</ins>
 
