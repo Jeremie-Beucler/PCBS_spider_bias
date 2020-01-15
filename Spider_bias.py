@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
 
 import expyriment
 import random
@@ -137,7 +137,7 @@ def Likert_scale(N, legendes, questions):
 		
 	return(list_can, list_pos, radius_button, pos_submit_button)
 
-question_file = open('questionnaire.txt')
+question_file = open('questionnaire.txt', encoding='utf-8')
 lignes = question_file.readlines()
 list_question = []
 for elt in lignes:
@@ -145,7 +145,7 @@ for elt in lignes:
 question_file.close()
 #ajout de chaque question du questionnaire sur la peur des araignées dans une liste
 
-list_legendes_points = ["Pas du tout\nd'accord", "Pas d'accord", "Plutôt pas\nd'accord", "Ni d'accord\nni pas d'accord", "Plutôt\nd'accord", "D'accord", "Tout à fait\nd'accord"]
+list_legendes_points = ["Pas du tout\nd'accord", "Pas d'accord", "Plutôt pas\nd'accord", "Indifférent", "Plutôt\nd'accord", "D'accord", "Tout à fait\nd'accord"]
 				
 exp.data_variable_names = ["Object type", "Real speed", "Perceived speed"]
 
