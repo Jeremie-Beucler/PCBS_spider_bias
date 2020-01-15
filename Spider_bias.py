@@ -145,7 +145,7 @@ for elt in lignes:
 question_file.close()
 #ajout de chaque question du questionnaire sur la peur des araignées dans une liste
 
-list_legendes_points = ["Pas du tout\nd'accord", "Pas d'accord", "Plutôt pas\n d'accord", "D'accord", "Plutôt\nd'accord", "D'accord", "Tout à fait\nd'accord"]
+list_legendes_points = ["Pas du tout\nd'accord", "Pas d'accord", "Plutôt pas\nd'accord", "Ni d'accord\nni pas d'accord", "Plutôt\nd'accord", "D'accord", "Tout à fait\nd'accord"]
 				
 exp.data_variable_names = ["Object type", "Real speed", "Perceived speed"]
 
