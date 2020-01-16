@@ -428,3 +428,5 @@ I feel like the course gave us a fantastic **toolbox** to use in our future proj
 I still have a lot to learn. For instance, I didn't used Expyriment in the most efficient way (I basically recoded the `TouchScreenButtonBox` as I didn't manage to use it whith a `Canva` object, and I didn't use the `move` function to move the stimuli). Also, my code could have been shorter and clearer.
 
 In the future, I would like to start using *R* for statistics and get familiarized with Matlab. I also intend to deepen my knowledge in Python - finishing Automatetheboringstuff would be a pretty good start!
+
+:spider:
