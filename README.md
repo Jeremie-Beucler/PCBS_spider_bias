@@ -55,7 +55,7 @@ In order to run this program, you need to have already installed on your compute
 
 - [x]  Clone the **[repository](https://github.com/Jeremie-Beucler/PCBS_spider_bias)** on your computer using a terminal;
 - [x]  Launch the program from your terminal: it takes two argument (the objects you want to compare);
-- [x]  The data are stored in a *.xpd* file in the folder Data.
+- [x]  The data are stored in a `<xpd>` file in the folder Data.
 
 ***
 
