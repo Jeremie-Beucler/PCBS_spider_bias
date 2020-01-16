@@ -55,11 +55,11 @@ In order to run this program, you need to have already installed on your compute
 
 - [x]  Clone the **[repository](https://github.com/Jeremie-Beucler/PCBS_spider_bias)** on your computer using a terminal;
 - [x]  Launch the program from your terminal: it takes two argument (the objects you want to compare);
-- [x]  The data are stored in a `<xpd>` file in the folder Data.
+- [x]  The data are stored in a `xpd` file in the folder Data.
 
 ***
 
-<ins>E.g.</ins>: if you want to compare the evaluation of the speed of a spider and of the speed of a fly, type: *"python Spider_bias.py tegenaria_domestica.png musca_domestica.png"*
+<ins>E.g.</ins>: if you want to compare the evaluation of the speed of a spider and of the speed of a fly, type: `python Spider_bias.py tegenaria_domestica.png musca_domestica.png`
 
 ***
 
@@ -86,7 +86,7 @@ All the pictures were found on Google image and were free of rights. The logicie
 
 ### Creating the background
 
-As I could not use a downward-facing projector, **I had to give the impression to the participant that he or she was looking down at the floor**. In order to do that, I decided to create for each trial a [Canvas](https://docs.expyriment.org/expyriment.stimuli.Canvas.html) with a floor and the picture of neutral legs in blue jeans.
+As I could not use a downward-facing projector, **I had to give the impression to the participant that he or she was looking down at the floor**. In order to do that, I decided to create for each trial a `[Canvas](https://docs.expyriment.org/expyriment.stimuli.Canvas.html)` with a floor and the picture of neutral legs in blue jeans.
 
 The code was very simple, I just had to create the Canvas and to plot the pictures on it.
 
@@ -128,9 +128,9 @@ def calc_pos(ancient_pos, verti_move, limit_verti):
 	Returns: the new position of the stimulus (tuple) and the degree of the rotation to apply to the stimulus (int)"""
   ```
   
-At first, I tried to use the *"Move"* function of Expyriment, but I did not succeed to implement it on a Canvas so I decided to implement it directly in the function. 
+At first, I tried to use the `Move` function of Expyriment, but I did not succeed to implement it on a `Canvas` so I decided to implement it directly in the function. 
 
-The vertical move corresponds to the speed of the object, one of the variable of interest in the experiment. Thanks to the *random* function, I managed to give a random horizontal move to the stimuli (-5, 0 or 5), in order to make it look like it was moving on its own.
+The vertical move corresponds to the speed of the object, one of the variable of interest in the experiment. Thanks to the `random` function, I managed to give a random horizontal move to the stimuli (-5, 0 or 5), in order to make it look like it was moving on its own.
 
 ```python
 new_pos = [ancient_pos[0],(ancient_pos[1] + -1 * verti_move)]
@@ -179,7 +179,7 @@ I needed my participants to answer on this kind of scale when:
 
 Therefore, **writing a function with adjustable parameters was very useful**. 
 
-However, as I was working with Canvas objects, I did not manage to use the [TouchScreenButtonBox](https://docs.expyriment.org/expyriment.io.TouchScreenButtonBox.html) of Expyriment.
+However, as I was working with `Canvas` objects, I did not manage to use the `[TouchScreenButtonBox](https://docs.expyriment.org/expyriment.io.TouchScreenButtonBox.html)` of Expyriment.
 
 ```python
 def Likert_scale(N, legendes, questions):
@@ -217,7 +217,7 @@ for i in range(N):
 			#création des boutons de réponse avec leurs légendes
 ```
 
-In the last block of code, I create a Canvas object for each question. I then plot on it the buttons, the legends, the question and a submit button. Finally, I just have to add each Canvas to a list returned by the function.
+In the last block of code, I create a `Canvas` object for each question. I then plot on it the buttons, the legends, the question and a submit button. Finally, I just have to add each `Canvas` to a list returned by the function.
 
 ```python
 for i in range(len(questions)):
@@ -234,7 +234,7 @@ for i in range(len(questions)):
 		#ajout pour chaque question d'une toile, et sur chaque toile de l'échelle, de la question, et d'un bouton pour valider ('ok.png')
 ```
 
-The function returns the list of Canvas to display, the positions of the buttons, their radius and the position of the submit button. It will be quite useful as I will need to check whether the participant clicked on the button to determine his or her answer.
+The function returns the list of `Canvas` to display, the positions of the buttons, their radius and the position of the submit button. It will be quite useful as I will need to check whether the participant clicked on the button to determine his or her answer.
 
 ```python
 return(list_can, list_pos, radius_button, pos_submit_button)
@@ -259,7 +259,7 @@ for i in range(0, 2):
 		exp.keyboard.wait()
 ```
 
-For the training part to be neutral, the object was a red circle moving through the screen, whose position was calculated with the function *calc_pos* presented above.
+For the training part to be neutral, the object was a red circle moving through the screen, whose position was calculated with the function `calc_pos` presented above.
 
 ```python
 		pos_circle = [0,400]
@@ -316,7 +316,7 @@ After each presentation of the object at a determined speed, the participant has
 
 - **mark the button where the participant clicked**
 
-N.B.: it implies to know if the mouse was on one of the response buttons, thanks to a *for loop* on the buttons' positions, taking into account their radius.
+N.B.: it implies to know if the mouse was on one of the response buttons, thanks to a `for` loop on the buttons' positions, taking into account their radius.
 
 ```python
 			if has_clicked_button == 0:
@@ -376,7 +376,7 @@ N.B.: it implies to know if the mouse was on one of the response buttons, thanks
 
 The *Fear of Spiders Questionnaire* (FSQ; Szymanksi & O’Donohue, 1995) contains 18 items, for which participants have to answer on a seven-point Likert scale. It has proven to be sensitive to non-phobic fears of spider (Muris & Merckelbach, 1996), which is the reason I decided to use it in my experiment.
 
-I translated the questionnaire in french, and put the questions in a *.txt* file. Then, thanks to the *Likert_scale* function I wrote for the speed evaluation part, **I simply had to read the *.txt* file and to put the questions in a list**.
+I translated the questionnaire in french, and put the questions in a `.txt` file. Then, thanks to the `Likert_scale` function I wrote for the speed evaluation part, **I simply had to read the `.txt` file and to put the questions in a list**.
 
 ```python
 question_file = open('questionnaire.txt')
@@ -387,7 +387,7 @@ for elt in lignes:
 question_file.close()
 #ajout de chaque question du questionnaire sur la peur des araignées dans une liste
 ```
-The code which allowed the participant to answer is the same than in the training part. The total score of the questionnaire (ranging from 18 to 126) is also saved in the *.xpd* file, after the speed evaluations.
+The code which allowed the participant to answer is the same than in the training part. The total score of the questionnaire (ranging from 18 to 126) is also saved in the `.xpd` file, after the speed evaluations.
 
 ```python
 score_quest = sum(list_score_quest)
@@ -425,6 +425,6 @@ I feel like the course gave us a fantastic **toolbox** to use in our future proj
 
 ### What I still got to learn
 
-I still have a lot to learn. For instance, I didn't used Expyriment in the most efficient way (I basically recoded the TouchScreenButtonBox as I didn't manage to use it whith a Canva object, and I didn't use the *"move"* function to move the stimuli). Also, my code could have been shorter and clearer.
+I still have a lot to learn. For instance, I didn't used Expyriment in the most efficient way (I basically recoded the `TouchScreenButtonBox` as I didn't manage to use it whith a `Canva` object, and I didn't use the `move` function to move the stimuli). Also, my code could have been shorter and clearer.
 
 In the future, I would like to start using *R* for statistics and get familiarized with Matlab. I also intend to deepen my knowledge in Python - finishing Automatetheboringstuff would be a pretty good start!
